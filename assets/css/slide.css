@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #004a92;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cc0000;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+
+
+.container2 {
+  max-width: 124rem;
+   
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.container3 {
+  max-width: 124rem;
+   
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.container3 .reseña{
+  background-color: #f4f4f4;
+  border-radius: 30px 30px 30px 30px;
+  max-width: 80rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+
+.container3 p{
+  text-align: center;
+  color: #222224;
+  font-size: 22px;
+  padding: 50px 0px;
+}
+
+@media(max-width:900px){
+.container3 p{
+   font-size: 15px;
+    }
+.container3 .reseña{
+   background-color: #f4f4f4;
+   border-radius: 30px 30px 30px 30px;
+   font-size: 15px;
+    }
+}
+
+
+
+#tranding{
+ width: 100%;
+ max-height: 1200px;
+ box-sizing: content-box;
+}
+
+#tranding .tranding-slider {
+  height: 52rem;
+  padding:  0;
+  position: relative;
+}
+
+
+@media (max-width:1440px) {
+  #tranding {
+    padding: 10 rem ;
+  }
+}
+
+#tranding .tranding-slider {
+  height: 52rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+@media (max-width:500px) {
+  #tranding .tranding-slider {
+    height: 35rem;
+  }
+  
+}
+
+.tranding-slide {
+  width: 30rem;
+  height: 40rem;
+  position: relative;
+}
+
+@media (max-width:500px) {
+  .tranding-slide {
+    width: 17rem !important;
+    height: 25rem !important;
+  }
+  .tranding-slide .tranding-slide-img img {
+    width: 17rem !important;
+    height: 25rem !important;
+  }
+}
+
+.tranding-slide .tranding-slide-img img {
+  width: 30rem;
+  height: 40rem;
+  border-radius: 1rem;
+  object-fit:scale-down;
+  background-color: #004a92;
+}
+
+.tranding-slide .tranding-slide-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  
+}
+
+.tranding-slide-content .food-price {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color:white;
+  -webkit-text-stroke: 1px rgb(88, 87, 87);
+}
+
+
+.tranding-slide-content .tranding-slide-content-bottom {
+  position: absolute;
+  bottom: 0rem;
+  left: 2rem;
+  color:white;
+  -webkit-text-stroke: 1px rgb(88, 87, 87);
+}
+
+.tranding-slide-content .food-name  {
+  text-align: center;
+  top: 2rem;
+  right: 2rem;
+  color:white;
+  -webkit-text-stroke: 1px rgb(88, 87, 87);
+}
+
+
+
+.food-rating {
+  padding-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.rating ion-icon {
+  color: var(--primary);
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.tranding-slider-control {
+  position: relative;
+  bottom: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tranding-slider-control .swiper-button-next {
+  left: 58% !important;
+  transform: translateX(-58%) !important;
+}
+
+@media (max-width:990px) {
+  .tranding-slider-control {
+    
+    bottom: 0rem;
+   
+  }
+
+
+  .tranding-slider-control .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+}
+
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 80% !important;
+    transform: translateX(-80%) !important;
+  }
+}
+
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 30% !important;
+    transform: translateX(-30%) !important;
+  }
+}
+
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 20% !important;
+    transform: translateX(-20%) !important;
+  }
+}
+
+.tranding-slider-control .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  left: 42%;
+  transform: translateX(-42%);
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #040488;
+}
+
+.tranding-slider-control .slider-arrow::after {
+  content: '';
+}
+
+.tranding-slider-control .swiper-pagination {
+  
+  position: relative;
+  width: 15rem;
+  bottom: 0rem;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #040488 !important;
+}
+
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+
+  background-color: #f30202;
+}
+

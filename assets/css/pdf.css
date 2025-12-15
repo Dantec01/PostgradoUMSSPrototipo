@@ -1,0 +1,50 @@
+.pdf-escritorio {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 600px;
+}
+
+.pdf-movil {
+    display: none;
+    min-height: 600px;
+}
+
+.titulo-movil {
+    text-align: center;
+    margin-top: -20px;
+    padding-bottom: 20px;
+}
+
+.titulopdf-movil {
+    display: none;
+}
+
+@media screen and (max-width: 991px) {
+    .pdf-escritorio {
+        display: none;
+        height: 0px;
+    }
+    .pdf-movil {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .titulo-movil {
+        width: 100%;
+        text-align: center;
+        margin-top: -30px;
+        padding-bottom: 20px;
+        display: block;
+    }
+    .titulo-escritorio {
+        display: none;
+    }
+    .titulo-movil h1 {
+        font-size: 2rem;
+    }
+    .titulopdf-movil {
+        display: block;
+        font-size: 1.3rem;
+    }
+}
