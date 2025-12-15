@@ -214,7 +214,7 @@ nav .navbar .links li:hover .js-sub-menu{
     display: block;
     max-width: 280px;
     width: 100%;
-    background:  #004a92;
+    background:  #fff;
     line-height: 40px;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -228,11 +228,11 @@ nav .navbar .links li:hover .js-sub-menu{
   }
   .sidebar-logo .logo-name{
     font-size: 25px;
-    color: #fff;
+    color: #333;
   }
     .sidebar-logo  i {
       font-size: 25px;
-      color: #fff;
+      color: #333;
     }
     .navbar .bx-menu{
       font-size: 25px;
