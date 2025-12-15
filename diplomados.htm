@@ -141,6 +141,196 @@
   .fa-regular{
     margin-top: 20px;
   }
+  
+  /* Estilos para el filtro de área */
+  .area-filter {
+    background: #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    position: sticky;
+    top: 20px;
+  }
+  
+  .area-filter h4 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  .area-filter-button {
+    display: block;
+    width: 100%;
+    padding: 8px 15px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: white;
+  }
+  
+  .area-filter-button.active {
+    background: #dc3545;
+  }
+  
+  .area-filter-button:not(.active) {
+    background: #6c757d;
+  }
+  
+  .area-filter-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  /* Nuevos estilos para las tarjetas de diplomados */
+  .trending-items {
+    margin-bottom: 30px;
+  }
+  
+  .trending-items .item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trending-items .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  
+  .trending-items .item .thumb {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+  }
+  
+  .trending-items .item .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .trending-items .item .thumb .price {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: white;
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-weight: 700;
+    color: #333;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  
+  .trending-items .item .thumb .status-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #28a745;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  .trending-items .item .thumb .status-badge.ultimas {
+    background: #dc3545;
+  }
+  
+  .trending-items .item .down-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trending-items .item .down-content .diploma-type {
+    color: #7c3aed;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .trending-items .item .down-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .trending-items .item .down-content .diploma-info {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #666;
+    flex-wrap: wrap;
+  }
+  
+  .trending-items .item .down-content .diploma-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .trending-items .item .down-content .diploma-info i {
+    font-size: 14px;
+    color: #7c3aed;
+  }
+  
+  .trending-items .item .down-content .inscripcion-status {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #28a745;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .trending-items .item .down-content .category {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    height: 36px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .trending-items .item {
+    cursor: pointer;
+  }
+  
+  .trending-items .item:active {
+    transform: translateY(-3px);
+  }
 </style>
   <div class="page-heading header-text">
     <div class="container">
@@ -169,36 +359,54 @@
           <a href="diplomados.htm#!" data-filter="*">Todos</a>
         </li>
       </ul>
-      <div class="row trending-box">
+      
+      <div class="row">
+        <!-- Columna principal con los diplomados -->
+        <div class="col-lg-9">
+          <div class="row trending-box">
 
       <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso informatica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-ciberseguridad-1v.htm"><img src="assets/images/programas/dip-ciberseguridad-1v-03.jpg" alt="dip-ciberseguridad-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-ciberseguridad-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>CIBERSEGURIDAD</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status abiertas">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
         <!-- fin slider -->   
 
       <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->      
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso electronica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-mecatronicaedi-3v.htm"><img src="assets/images/programas/dip-mecatronicaedi-3v-05.jpg" alt="dip-mecatronicaedi-3v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-mecatronicaedi-3v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>MECATRÓNICA EN EDIFICIOS INTELIGENTES</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status abiertas">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -210,16 +418,23 @@
         
 
      <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-edusup-19v.htm"><img src="assets/images/programas/dip-edusup-19v-01.jpg" alt="dip-edusup-19v"></a>
-              <span class="price"><em></em>Bs 4500</span>
+              <span class="price">Bs 4500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>DOCENCIA EN EDUCACIÓN SUPERIOR</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status abiertas">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Profesionales</span>
-               <a href="dip-edusup-19v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
@@ -229,32 +444,46 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso mecanica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-isoldadura-1v.htm"><img src="assets/images/programas/dip-isoldadura-1v-07.jpg" alt="dip-isoldadura-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-isoldadura-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>INGENIERÍA DE SOLDADURA</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status abiertas">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
         <!-- fin slider -->   
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados informatica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-cdatos-4v.htm"><img src="assets/images/programas/dip-cdatos-4v-03.jpg" alt="dip-cdatos-4v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales</span>
-               <a href="dip-cdatos-4v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>CIENCIA DE DATOS</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status abiertas">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales</span>
             </div>
           </div>
         </div>
@@ -263,16 +492,23 @@
 
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados quimica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-tbiocombustible-1v.htm"><img src="assets/images/programas/dip-tbiocombustible-1v-19.jpg" alt="dip-tbiocombustible-1v"></a>
-              <span class="price"><em></em>Bs 5600</span>
+              <span class="price">Bs 5600</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales</span>
-               <a href="dip-tbiocombustible-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>TECNOLOGÍAS DE BIOCOMBUSTIBLES E HIDRÓGENO</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 8 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status abiertas">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales</span>
             </div>
           </div>
         </div>
@@ -282,48 +518,69 @@
 
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados electronica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-biomedica-2v.htm"><img src="assets/images/programas/dip-biomedica-2v-07.jpg" alt="dip-biomedica-2v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>BIOMEDICA 2V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-biomedica-2v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
         <!-- fin slider -->  
          
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-trabaltoriesgo-3v.htm"><img src="assets/images/programas/dip-trabaltoriesgo-3v-06.jpg" alt="dip-trabaltoriesgo-3v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales,Modalidad de Graduación por Diplomado</span>
-               <a href="dip-trabaltoriesgo-3v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>TRABALTORIESGO 3V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales,Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
         <!-- fin slider -->    
 
                 <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-iergonomia-7v.htm"><img src="assets/images/programas/dip-iergonomia-7v-07.jpg" alt="dip-iergonomia-7v"></a>
-              <span class="price"><em></em>Bs 4500</span>
+              <span class="price">Bs 4500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>IERGONOMIA 7V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Profesionales</span>
-               <a href="dip-iergonomia-7v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
@@ -334,16 +591,23 @@
          <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados--> 
           <!-- SUSPENDIDO EN FECHA 21 NOV 2025 no aparecio la coordinadora-->
          <!--  
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-seguridadtiafyv-6v.htm"><img src="assets/images/programas/dip-seguridadtiafyv-6v-02.jpg" alt="dip-seguridadtiafyv-6v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-seguridadtiafyv-6v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>SEGURIDADTIAFYV 6V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div> 
@@ -353,32 +617,46 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados mecanica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-lutribologia-1v.htm"><img src="assets/images/programas/dip-lutribologia-1v-11.jpg" alt="dip-lutribologia-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-lutribologia-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>LUTRIBOLOGIA 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
         <!-- fin slider -->        
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-estadistica-4v.htm"><img src="assets/images/programas/dip-estadistica-4v-08.jpg" alt="dip-estadistica-4v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-estadistica-4v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>ESTADISTICA 4V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -395,16 +673,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso quimica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
-              <a href="dip-ccialimentos-10v.htm"><img src="assets/images/programas/dip-ccialimentos-10v-03.jpg" alt="dip-ccialimentos-10v.jpg"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-ccialimentos-10v.htm"><img src="assets/images/programas/dip-ccialimentos-10v-03.jpg" alt="dip-ccialimentos-10v"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-ccialimentos-10v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>CCIALIMENTOS 10V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -414,16 +699,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso quimica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-pquimicos-10v.htm"><img src="assets/images/programas/dip-pquimicos-10v-17.jpg" alt="dip-pquimicos-10v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-pquimicos-10v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>PQUIMICOS 10V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -432,16 +724,23 @@
 
          <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso mecanica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-hleanm-1v.htm"><img src="assets/images/programas/dip-hleanm-1v-10.jpg" alt="dip-hleanm-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>HLEANM 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-hleanm-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
@@ -451,16 +750,23 @@
 
          <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso quimica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-gestagua-9v.htm"><img src="assets/images/programas/dip-gestagua-9v-08.jpg" alt="dip-gestagua-9v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-gestagua-9v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>GESTAGUA 9V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -469,16 +775,23 @@
 
       <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso mecanica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-mantenimientoi-7v.htm"><img src="assets/images/programas/dip-mantenimientoi-7v-05.jpg" alt="dip-mantenimientoi-7v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-mantenimientoi-7v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>MANTENIMIENTOI 7V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -487,16 +800,23 @@
 
       <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-iemprendimiento-2v.htm"><img src="assets/images/programas/dip-iemprendimiento-2v-03.jpg" alt="dip-iemprendimiento-2v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado </span>
-               <a href="dip-iemprendimiento-2v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>IEMPRENDIMIENTO 2V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -505,16 +825,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-infvial-7v.htm"><img src="assets/images/programas/dip-infvial-7v-04.jpg" alt="dip-infvial-7v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-infvial-7v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>INFVIAL 7V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -523,16 +850,23 @@
 
       <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-ingestructuras-6v.htm"><img src="assets/images/programas/dip-ingestructuras-6v-04.jpg" alt="dip-ingestructuras-6v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales</span>
-               <a href="dip-ingestructuras-6v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>INGESTRUCTURAS 6V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales</span>
             </div>
           </div>
         </div>
@@ -541,16 +875,23 @@
         
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
        <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-iicalderos-1v.htm"><img src="assets/images/programas/dip-iicalderos-1v-03.jpg" alt="dip-iicalderos-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales</span>
-               <a href="dip-iicalderos-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>IICALDEROS 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales</span>
             </div>
           </div>
         </div>--> 
@@ -559,16 +900,23 @@
 
        <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso mecanica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-gproduccionympi-5v.htm"><img src="assets/images/programas/dip-gproduccionympi-5v-04.jpg" alt="dip-gproduccionympi-5v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-gproduccionympi-5v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>GPRODUCCIONYMPI 5V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -576,16 +924,23 @@
 
        <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-projectm-4v.htm"><img src="assets/images/programas/dip-projectm-4v-03.jpg" alt="dip-projectm-4v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-projectm-4v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>PROJECTM 4V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -593,16 +948,23 @@
 
       <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso electronica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-sisepotencia-1v.htm"><img src="assets/images/programas/dip-sisepotencia-1v-03.jpg" alt="dip-sisepotencia-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-sisepotencia-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>SISEPOTENCIA 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -611,16 +973,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
-              <a href="dip-supervisionf-1v.htm"><img src="assets/images/programas/dip-supervisionf-1v-02.jpg" alt="dip-supervisionf-1v.jpg"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-supervisionf-1v.htm"><img src="assets/images/programas/dip-supervisionf-1v-02.jpg" alt="dip-supervisionf-1v"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-supervisionf-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>SUPERVISIONF 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -629,16 +998,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-iaedusup-1v.htm"><img src="assets/images/programas/dip-iaedusup-1v-08.jpg" alt="dip-iaedusup-1v"></a>
-              <span class="price"><em></em>Bs 4500</span>
+              <span class="price">Bs 4500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales</span>
-               <a href="dip-iaedusup-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>IAEDUSUP 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales</span>
             </div>
           </div>
         </div>
@@ -646,16 +1022,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso quimica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-ingambiental-8v.htm"><img src="assets/images/programas/dip-ingambiental-8v-07.jpg" alt="dip-ingambiental-8v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-ingambiental-8v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>INGAMBIENTAL 8V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -663,16 +1046,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso sistemas">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-icpuentes-4v.htm"><img src="assets/images/programas/dip-icpuentes-4v-05.jpg" alt="dip-icpuentes-4v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-icpuentes-4v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>ICPUENTES 4V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div>
@@ -682,16 +1072,23 @@
         <!--PROGRAMAS BORRADSO TEMPORALMENTE POR QUE NO LLENARON EL CUPO 2025-->
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
          <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-cmandoi-1v.htm"><img src="assets/images/programas/dip-cmandoi-1v-03.jpg" alt="dip-cmandoi-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>CMANDOI 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-cmandoi-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
@@ -701,16 +1098,23 @@
       <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados--> 
       
       <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-cadcam-1v.htm"><img src="assets/images/programas/dip-cadcam-1v-05.jpg" alt="dip-cadcam-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
-              <span class="category"> Profesionales, Modalidad de Graduación por Diplomado</span>
-               <a href="dip-cadcam-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
+              <span class="diploma-type">Diplomado</span>
+              <h4>CADCAM 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales, Modalidad de Graduación por Diplomado</span>
             </div>
           </div>
         </div> -->
@@ -723,16 +1127,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
       <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-mlearning-1v.htm"><img src="assets/images/programas/dip-mlearning-1v-04.jpg" alt="dip-mlearning-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>MLEARNING 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-mlearning-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>--> 
@@ -740,12 +1151,12 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso quimica">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
+              
               <a href="dip-ccialimentos-9v.htm"><img src="assets/images/programas/dip-ccialimentos-9v-03.jpg" alt="dip-ccialimentos-9v" style="height: 306px;"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category"> Profesionales, Modalidad de Graduación por Diplomado,</span>
@@ -761,16 +1172,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-iarecursohidricoccc-4v.htm"><img src="assets/images/programas/dip-iarecursohidricoccc-4v-03.jpg" alt="dip-iarecursohidricoccc-4v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>IARECURSOHIDRICOCCC 4V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-iarecursohidricoccc-4v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>--> 
@@ -779,16 +1197,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-instrumentacionci4-4v.htm"><img src="assets/images/programas/dip-instrumentacionci4-4v.jpg" alt="dip-instrumentacionci4-4v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>INSTRUMENTACIONCI4 4V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-instrumentacionci4-4v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div> -->
@@ -799,30 +1224,44 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-gianaliticad-1v.htm"><img src="assets/images/programas/dip-gianaliticad-1v-07.jpg" alt="dip-gianaliticad-1v"></a>
-                <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-gianaliticad-1v.htm"><img src="assets/images/programas/dip-gianaliticad-1v-07.jpg" alt="dip-gianaliticad-1v"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>GIANALITICAD 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Doble Titulacion , Profesionales</span>
-                <a href="dip-gianaliticad-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Doble Titulacion , Profesionales</span>
+            </div>
           </div>  
         </div>--> 
         <!-- fin slider -->             
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-ametodoef-1v.htm"><img src="assets/images/programas/dip-ametodoef-1v-04.jpg" alt="dip-ametodoef-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>AMETODOEF 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-ametodoef-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>--> 
@@ -833,14 +1272,21 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-trabaltoriesgo-v2.htm"><img src="assets/images/programas/dip-trabaltoriesgo-v2-07.jpg" alt="dip-trabaltoriesgo-v2"></a>
-                <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-trabaltoriesgo-v2.htm"><img src="assets/images/programas/dip-trabaltoriesgo-v2-07.jpg" alt="dip-trabaltoriesgo-v2"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>TRABALTORIESGO V2</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Doble Titulacion , Profesionales</span>
-                <a href="dip-trabaltoriesgo-v2.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Doble Titulacion , Profesionales</span>
+            </div>
           </div>  
         </div>-->
         <!-- fin slider -->
@@ -849,16 +1295,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-igeotecnica-1v.htm"><img src="assets/images/programas/dip-igeotecnica-1v-03.jpg" alt="dip-igeotecnica-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>IGEOTECNICA 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-igeotecnica-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>--> 
@@ -872,14 +1325,21 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-iemprendiemiento-1v.htm"><img src="assets/images/programas/dip-iemprendiemiento-1v-05.jpg" alt="dip-iemprendiemiento-1v"></a>
-                <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-iemprendiemiento-1v.htm"><img src="assets/images/programas/dip-iemprendiemiento-1v-05.jpg" alt="dip-iemprendiemiento-1v"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>IEMPRENDIEMIENTO 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Doble Titulacion , Profesionales</span>
-                <a href="dip-iemprendiemiento-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Doble Titulacion , Profesionales</span>
+            </div>
           </div>  
         </div>-->
         <!-- fin slider -->          
@@ -890,14 +1350,21 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-mantenimientoi-6v.htm"><img src="assets/images/programas/dip-mantenimientoi-6v-02.jpg" alt="dip-mantenimientoi-6v"></a>
-                <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-mantenimientoi-6v.htm"><img src="assets/images/programas/dip-mantenimientoi-6v-02.jpg" alt="dip-mantenimientoi-6v"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>MANTENIMIENTOI 6V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Doble Titulacion , Profesionales</span>
-                <a href="dip-mantenimientoi-6v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Doble Titulacion , Profesionales</span>
+            </div>
           </div>  
         </div>-->
         <!-- fin slider -->
@@ -908,14 +1375,21 @@
 
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-iergonomia-6v.htm"><img src="assets/images/programas/dip-iergonomia-6v-02.jpg" alt="dip-iergonomia-6v"></a>
-                <span class="price"><em></em>Bs 4500</span>
+              <a href="dip-iergonomia-6v.htm"><img src="assets/images/programas/dip-iergonomia-6v-02.jpg" alt="dip-iergonomia-6v"></a>
+              <span class="price">Bs 4500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>IERGONOMIA 6V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Profesionales</span>
-                <a href="dip-iergonomia-6v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales</span>
+            </div>
           </div>  
         </div>-->
         <!-- fin slider -->
@@ -926,14 +1400,21 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-avionica-v3.htm"><img src="assets/images/programas/dip-avionica-v3-04.jpg" alt="dip-avionica-v3"></a>
-                <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-avionica-v3.htm"><img src="assets/images/programas/dip-avionica-v3-04.jpg" alt="dip-avionica-v3"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>AVIONICA V3</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Doble Titulacion , Profesionales</span>
-                <a href="dip-avionica-v3.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Doble Titulacion , Profesionales</span>
+            </div>
           </div>  
         </div>-->
         <!-- fin slider -->
@@ -943,16 +1424,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
 <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-sisintegradocmas-8v.htm"><img src="assets/images/programas/dip-sisintegradocmas-8v-02.jpg" alt="dip-sisintegradocmas-8v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>SISINTEGRADOCMAS 8V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-sisintegradocmas-8v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>--> 
@@ -963,14 +1451,21 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-educacion-superior-18v.htm"><img src="assets/images/programas/dip-educacion-superior-18v-04.jpg" alt="dip-educacion-superior-18v"></a>
-                <span class="price"><em></em>Bs 4500</span>
+              <a href="dip-educacion-superior-18v.htm"><img src="assets/images/programas/dip-educacion-superior-18v-04.jpg" alt="dip-educacion-superior-18v"></a>
+              <span class="price">Bs 4500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>EDUCACION SUPERIOR 18V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Profesionales</span>
-                <a href="dip-educacion-superior-18v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Profesionales</span>
+            </div>
           </div>  
         </div>-->
         <!-- fin slider -->          
@@ -980,14 +1475,21 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-logisticaigcs-5v.htm"><img src="assets/images/programas/dip-logisticaigcs-5v-01.jpg" alt="dip-logisticaigcs-5v"></a>
-                <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-logisticaigcs-5v.htm"><img src="assets/images/programas/dip-logisticaigcs-5v-01.jpg" alt="dip-logisticaigcs-5v"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>LOGISTICAIGCS 5V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Doble Titulacion , Profesionales</span>
-                <a href="dip-logisticaigcs-5v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Doble Titulacion , Profesionales</span>
+            </div>
           </div>  
         </div>-->
         <!-- fin slider -->          
@@ -997,14 +1499,21 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-cdatos-3v.htm"><img src="assets/images/programas/dip-cdatos-3v-03.jpg" alt="dip-cdatos-3v"></a>
-                <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-cdatos-3v.htm"><img src="assets/images/programas/dip-cdatos-3v-03.jpg" alt="dip-cdatos-3v"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>CDATOS 3V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Doble Titulacion , Profesionales</span>
-                <a href="dip-cdatos-3v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Doble Titulacion , Profesionales</span>
+            </div>
           </div>  
         </div>-->  
         <!-- fin slider -->  
@@ -1014,14 +1523,21 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-gproduccionympi-4v.htm"><img src="assets/images/programas/dip-gproduccionympi-4v-02.jpg" alt="dip-gproduccionympi-4v"></a>
-                <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-gproduccionympi-4v.htm"><img src="assets/images/programas/dip-gproduccionympi-4v-02.jpg" alt="dip-gproduccionympi-4v"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>GPRODUCCIONYMPI 4V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Doble Titulacion , Profesionales</span>
-                <a href="dip-gproduccionympi-4v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Doble Titulacion , Profesionales</span>
+            </div>
           </div>  
         </div>--> 
         <!-- fin slider --> 
@@ -1031,30 +1547,44 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-iswcomercial-3v.htm"><img src="assets/images/programas/dip-iswcomercial-3v-02.jpg" alt="dip-iswcomercial-3v"></a>
-                <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-iswcomercial-3v.htm"><img src="assets/images/programas/dip-iswcomercial-3v-02.jpg" alt="dip-iswcomercial-3v"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>ISWCOMERCIAL 3V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Doble Titulacion , Profesionales</span>
-                <a href="dip-iswcomercial-3v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Doble Titulacion , Profesionales</span>
+            </div>
           </div>  
         </div>--> 
         <!-- fin slider -->  
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-geofundaciones-1v.htm"><img src="assets/images/programas/dip-geofundaciones-1v-03.jpg" alt="dip-geofundaciones-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>GEOFUNDACIONES 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-geofundaciones-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>--> 
@@ -1064,16 +1594,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados -->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-gagua-8v.htm"><img src="assets/images/programas/dip-gagua-8v-06.jpg" alt="dip-gagua-8v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>GAGUA 8V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-gagua-8v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>  -->
@@ -1082,16 +1619,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-seguridadtiafyv-5v.htm"><img src="assets/images/programas/dip-seguridadtiafyv-5v-02.jpg" alt="dip-seguridadtiafyv-5v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>SEGURIDADTIAFYV 5V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-seguridadtiafyv-5v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>   -->
@@ -1101,16 +1645,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-infvial-6v.htm"><img src="assets/images/programas/dip-infvial-6v-02.jpg" alt="dip-infvial-6v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>INFVIAL 6V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-infvial-6v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
@@ -1119,16 +1670,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-projectm-3v.htm"><img src="assets/images/programas/dip-projectm-3v-03.jpg" alt="dip-projectm-3v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>PROJECTM 3V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-projectm-3v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1136,16 +1694,23 @@
          
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-gproduccionympi-2v.htm"><img src="assets/images/programas/dip-gproduccionympi-2v-01.jpg" alt="dip-gproduccionympi-2v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>GPRODUCCIONYMPI 2V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-gproduccionympi-2v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1155,16 +1720,23 @@
 
          <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados - ojo se dio de baja en 25 abril de 2024-->
         <!--
-         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+         <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-cdatos-2v.htm"><img src="assets/images/programas/dip-cdatos-2v-03.jpg" alt="dip-cdatos-2v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>CDATOS 2V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-cdatos-2v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1174,16 +1746,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-calidadpci-1v.htm"><img src="assets/images/programas/dip-calidadpci-1v-02.jpg" alt="dip-calidadpci-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>CALIDADPCI 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-calidadpci-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1191,32 +1770,46 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-rindustrial-2v.htm"><img src="assets/images/programas/dip-rindustrial-2v-09.jpg" alt="dip-rindustrial-2v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>RINDUSTRIAL 2V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-rindustrial-2v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
         <!-- fin slider -->          
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-mecatronicaedi-2v.htm"><img src="assets/images/programas/dip-mecatronicaedi-2v-05.jpg" alt="dip-mecatronicaedi-2v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>MECATRONICAEDI 2V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-mecatronicaedi-2v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1224,16 +1817,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-ftcmatematicas-1v.htm"><img src="assets/images/programas/dip-ftcmatematicas-1v-02.jpg" alt="dip-ftcmatematicas-1v"></a>
-              <span class="price"><em></em>Bs 3300</span>
+              <span class="price">Bs 3300</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>FTCMATEMATICAS 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Profesionales, Profesores de Unidades Educativas</span>
-               <a href="dip-ftcmatematicas-1v-02.jpg"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>--> 
@@ -1241,16 +1841,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-biomedica-1v.htm"><img src="assets/images/programas/dip-biomedica-1v-04.jpg" alt="dip-biomedica-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>BIOMEDICA 1V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-biomedica-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1258,16 +1865,23 @@
         
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
          <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-iot-2v.htm"><img src="assets/images/programas/dip-iot-2v.jpg" alt="dip-iot-2v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>IOT 2V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-iot-2v.jpg"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
@@ -1276,12 +1890,12 @@
          
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
               <p class="number">12</p>
               <a href="dip-gpoperaciones-2v.htm"><img src="assets/images/programas/dip-gpoperaciones-2v.jpg" alt="ddip-gpoperaciones-2v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1293,16 +1907,23 @@
       
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-ingambiental-7v.htm"><img src="assets/images/programas/dip-ingambiental-7v-05.jpg" alt="dip-ingambiental-7v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>INGAMBIENTAL 7V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-ingambiental-7v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1311,16 +1932,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-recursohidricoccc-3v.htm"><img src="assets/images/programas/dip-iarecursohidricoccc-3v-06.jpg" alt="dip-recursohidricoccc-3v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>RECURSOHIDRICOCCC 3V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-recursohidricoccc-3v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1328,16 +1956,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-icpuentes-3v.htm"><img src="assets/images/programas/dip-icpuentes-3v-02.jpg" alt="dip-icpuentes-3v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>ICPUENTES 3V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-icpuentes-3v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1348,16 +1983,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-educacion-superior-17v.htm"><img src="assets/images/programas/dip-educacion-superior-17v-05.jpg" alt="dip-educacion-superior-17v"></a>
-              <span class="price"><em></em>Bs 4500</span>
+              <span class="price">Bs 4500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>EDUCACION SUPERIOR 17V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Profesionales</span>
-               <a href="dip-educacion-superior-17v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1365,16 +2007,23 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
-              <p class="number">1</p>
               <a href="dip-intrumentacionci4-3v.htm"><img src="assets/images/programas/dip-intrumentacionci4-3v-02.jpg" alt="dip-intrumentacionci4-3v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>INTRUMENTACIONCI4 3V</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Doble Titulacion , Profesionales</span>
-               <a href="dip-intrumentacionci4-3v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>    -->
@@ -1382,12 +2031,12 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
               <p class="number">12</p>
               <a href="dip-plantas-industriales-v1.htm"><img src="assets/images/programas/dip-plantas-industriales-1v-06.jpg" alt="dip-plantas-industriales-1v"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1399,12 +2048,12 @@
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
             <p class="number">12</p>
               <a href="deiav1.htm"><img src="assets/images/programas/deiav1-01.jpg" alt="deiav1"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1416,12 +2065,12 @@
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
 
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados">
           <div class="item">
             <div class="thumb">
             <p class="number">12</p>
               <a href="daaaplnv1.htm"><img src="assets/images/programas/daaaplnv1-06.jpg" alt="daaaplnv1"></a>
-              <span class="price"><em></em>Bs. 5500</span>
+              <span class="price">Bs. 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1435,12 +2084,12 @@
       
         <!--slider -->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
             <p class="number">4</p>
               <a href="dgav7.htm"><img src="assets/images/programas/01-dgav7.jpg" alt="dgav7"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1453,12 +2102,12 @@
 
         <!--slider -->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
             <p class="number">5</p>
               <a href="disiev5.htm"><img src="assets/images/programas/01-disiev5.jpg" alt="disiev5"></a>
-              <span class="price"><em></em>Bs 4500</span>
+              <span class="price">Bs 4500</span>
             </div>
             <div class="down-content">
               <span class="category">Profesionales</span>
@@ -1471,12 +2120,12 @@
 
         <!--slider -->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
             <p class="number">6</p>
               <a href="dpqv9.htm"><img src="assets/images/programas/dpqv9-03.jpg" alt="dpqv9"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1487,12 +2136,12 @@
         <!-- fin slider -->
         <!--slider -->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
             <p class="number">7</p>
               <a href="dstiafvv4.htm"><img src="assets/images/programas/02-dstiafvv4.jpg" alt="dstiafvv4"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1509,7 +2158,7 @@
               <div class="thumb">
               <p class="number">9</p>
                 <a href="dip-energias-alternativas-v2.htm"><img src="assets/images/programas/dip-energias-alternativas-v2-03.jpg" alt="dip-energias-alternativas-v2"></a>
-                <span class="price"><em></em>Bs 5500</span>
+                <span class="price">Bs 5500</span>
               </div>
               <div class="down-content">
                 <span class="category">Doble Titulacion , Profesionales</span>
@@ -1524,26 +2173,33 @@
         <div class="col-lg-3 col-md-6  align-self-center mb-30 trending-items col-md-6 encurso">
           <div class="item">
               <div class="thumb">
-              <p class="number">1</p>
-                <a href="dip-estadistica-v3.htm"><img src="assets/images/programas/dip-estadistica-v3-08.jpg" alt="dip-estadistica-v3"></a>
-                <span class="price"><em></em>Bs 5500</span>
+              <a href="dip-estadistica-v3.htm"><img src="assets/images/programas/dip-estadistica-v3-08.jpg" alt="dip-estadistica-v3"></a>
+              <span class="price">Bs 5500</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
+            </div>
+            <div class="down-content">
+              <span class="diploma-type">Diplomado</span>
+              <h4>ESTADISTICA V3</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 6 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> VIRTUAL</span>
+                <span><i class="fa-regular fa-calendar"></i> 26 ENERO</span>
               </div>
-              <div class="down-content">
-                <span class="category">Doble Titulacion , Profesionales</span>
-                <a href="dip-estadistica-v3.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
+              <span class="category">Doble Titulacion , Profesionales</span>
+            </div>
           </div>  
         </div>    -->
         <!-- fin slider --> 
 
         <!--slider -->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
             <p class="number">11</p>
               <a href="dip-trab-alto-riesgo-v1.htm"><img src="assets/images/programas/dip-trabaltoriesgo-1v-03.png" alt="dip-trab-alto-riesgo-v1"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1555,12 +2211,12 @@
 
         <!--slider -->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
             <p class="number">9</p>
               <a href="dip-mantenimientoi-v5.htm"><img src="assets/images/programas/dip-mantenimientoi-5v-01.jpg" alt="dip-mantenimientoi-v5"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1575,12 +2231,12 @@
 
         <!--slider -->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
             <p class="number">13</p>
               <a href="dip-sisintegrado-cmas-v7.htm"><img src="assets/images/programas/dip-sisintegrado-cmas-v7.jpg" alt="dip-sisintegrado-cmas-v7"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1592,12 +2248,12 @@
 
         <!--slider -->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
             <p class="number">14</p>
               <a href="dcciav7.htm"><img src="assets/images/programas/dcciav7.jpg" alt="dcciav7"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1609,12 +2265,12 @@
 
         <!--slider -->
         <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso">
           <div class="item">
             <div class="thumb">
             <p class="number">15</p>
               <a href="dicscv2.htm"><img src="assets/images/programas/dicscv2.jpg" alt="dicscv2"></a>
-              <span class="price"><em></em>Bs 5500</span>
+              <span class="price">Bs 5500</span>
             </div>
             <div class="down-content">
               <span class="category">Doble Titulacion , Profesionales</span>
@@ -1639,7 +2295,22 @@
       <br>
 
 
-    
+          </div>
+        </div>
+        
+        <!-- Columna del filtro por área -->
+        <div class="col-lg-3">
+          <div class="area-filter">
+            <h4>Área</h4>
+            <button class="area-filter-button active" data-area="*">Todos</button>
+            <button class="area-filter-button" data-area="informatica">Informática</button>
+            <button class="area-filter-button" data-area="sistemas">Sistemas</button>
+            <button class="area-filter-button" data-area="electronica">Electrónica</button>
+            <button class="area-filter-button" data-area="quimica">Química</button>
+            <button class="area-filter-button" data-area="mecanica">Mecánica</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1705,6 +2376,36 @@
 
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  
+  <!-- Script para el filtro de área -->
+  <script>
+    $(document).ready(function() {
+      // Filtro de área
+      $('.area-filter-button').click(function() {
+        var area = $(this).data('area');
+        
+        // Actualizar botón activo
+        $('.area-filter-button').removeClass('active');
+        $(this).addClass('active');
+        
+        // Filtrar diplomados
+        if (area === '*') {
+          $('.trending-items').show();
+        } else {
+          $('.trending-items').hide();
+          $('.trending-items.' + area).show();
+        }
+      });
+      
+      // Hacer las tarjetas clickeables
+      $('.trending-items .item').click(function() {
+        var link = $(this).find('.thumb a').attr('href');
+        if (link) {
+          window.location.href = link;
+        }
+      });
+    });
+  </script>
   <script src="assets/js/isotope.min.js"></script>
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/counter.js"></script>
