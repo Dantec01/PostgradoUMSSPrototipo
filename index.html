@@ -897,6 +897,27 @@ Diciembre 2025              <p>
   <a href="https://www.instagram.com/posgradooficialfcyt/" class="btn-insta" target="_blank">
 	    <i class="fa-brands fa-instagram  " style="color: #ffffff;"></i>
 	</a>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <span>Chatbot</span>
+      <button id="closeChat" style="background:none;border:none;color:white;font-size:16px;cursor:pointer;">&times;</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message bot">Hola, en que te puedo ayudar?</div>
+      <button class="chat-option" onclick="sendOption('Como inscribirme a un programa?')">Como inscribirme a un programa?</button>
+      <button class="chat-option" onclick="sendOption('Que diplomados hay para informática?')">Que diplomados hay para informática?</button>
+      <button class="chat-option" onclick="sendOption('Con quien me puedo comunicar para obtener mas información?')">Con quien me puedo comunicar para obtener mas información?</button>
+    </div>
+    <div class="chat-footer">
+      <input type="text" placeholder="Escribe tu mensaje..." disabled>
+      <button disabled><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <a href="#" class="btn-chat" id="chatBtn">
+      <i class="fa-solid fa-robot" style="color: #ffffff;"></i>
+  </a>
+
   <a href="https://api.whatsapp.com/send?phone=59144116122" class="btn-wsp" target="_blank">
 	    <i class="fa-brands fa-whatsapp " style="color: #ffffff;"></i>
 	</a>
@@ -958,8 +979,97 @@ Diciembre 2025              <p>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
   
-  
-  
+  <script>
+    const chatBtn = document.getElementById('chatBtn');
+    const chatWindow = document.getElementById('chatWindow');
+    const closeChat = document.getElementById('closeChat');
+    const chatInput = document.querySelector('.chat-footer input');
+    const sendBtn = document.querySelector('.chat-footer button');
+
+    chatBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+        chatWindow.style.display = 'block';
+      } else {
+        chatWindow.style.display = 'none';
+      }
+    });
+
+    closeChat.addEventListener('click', () => {
+      chatWindow.style.display = 'none';
+    });
+
+    // Enable input and button
+    chatInput.disabled = false;
+    sendBtn.disabled = false;
+
+    // Send message on button click
+    sendBtn.addEventListener('click', () => {
+        const text = chatInput.value.trim();
+        if (text) {
+            processMessage(text);
+            chatInput.value = '';
+        }
+    });
+
+    // Send message on Enter key
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const text = chatInput.value.trim();
+            if (text) {
+                processMessage(text);
+                chatInput.value = '';
+            }
+        }
+    });
+
+    function sendOption(text) {
+        processMessage(text);
+    }
+
+    function processMessage(text) {
+      const chatBody = document.querySelector('.chat-body');
+      
+      // Add user message
+      const userMsg = document.createElement('div');
+      userMsg.className = 'chat-message user';
+      userMsg.style.background = '#eee';
+      userMsg.style.color = '#333';
+      userMsg.style.borderBottomRightRadius = '0';
+      userMsg.style.marginLeft = 'auto';
+      userMsg.style.width = 'fit-content';
+      userMsg.innerText = text;
+      chatBody.appendChild(userMsg);
+
+      // Scroll to bottom
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      // Determine bot response
+      let responseText = "Gracias por tu mensaje. Un asesor te responderá pronto.";
+      const lowerText = text.toLowerCase();
+
+      if (lowerText.includes("inscribirme") || lowerText.includes("inscripción")) {
+          responseText = "Para inscribirte, debes presentar fotocopia de carnet, título académico y llenar el formulario en nuestras oficinas o vía web.";
+      } else if (lowerText.includes("informática") || lowerText.includes("sistemas")) {
+          responseText = "Actualmente ofrecemos Diplomados en Ciencia de Datos, Ciberseguridad y Desarrollo Web Full Stack.";
+      } else if (lowerText.includes("contacto") || lowerText.includes("comunicar") || lowerText.includes("información")) {
+          responseText = "Puedes contactarnos al teléfono 44116122 o visitarnos en la Facultad de Ciencias y Tecnología, Campus UMSS.";
+      } else if (lowerText.includes("precio") || lowerText.includes("costo")) {
+          responseText = "Los costos varían según el programa. Por favor, visita la sección de Diplomados o Maestrías para ver los detalles de cada uno.";
+      } else if (lowerText.includes("hola") || lowerText.includes("buenos días")) {
+          responseText = "¡Hola! ¿En qué puedo ayudarte hoy?";
+      }
+
+      // Simulate bot response
+      setTimeout(() => {
+        const botMsg = document.createElement('div');
+        botMsg.className = 'chat-message bot';
+        botMsg.innerText = responseText;
+        chatBody.appendChild(botMsg);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 1000);
+    }
+  </script>
  
   </body>
 </html>
