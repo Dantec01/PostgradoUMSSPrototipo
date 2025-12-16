@@ -137,12 +137,202 @@
   .fa-regular{
     margin-top: 20px;
   }
+  
+  /* Estilos para el filtro de área */
+  .area-filter {
+    background: #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    position: sticky;
+    top: 20px;
+  }
+  
+  .area-filter h4 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  .area-filter-button {
+    display: block;
+    width: 100%;
+    padding: 8px 15px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: white;
+  }
+  
+  .area-filter-button.active {
+    background: #dc3545;
+  }
+  
+  .area-filter-button:not(.active) {
+    background: #6c757d;
+  }
+  
+  .area-filter-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  /* Nuevos estilos para las tarjetas */
+  .trending-items {
+    margin-bottom: 30px;
+  }
+  
+  .trending-items .item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trending-items .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  
+  .trending-items .item .thumb {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+  }
+  
+  .trending-items .item .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .trending-items .item .thumb .price {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: white;
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-weight: 700;
+    color: #333;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  
+  .trending-items .item .thumb .status-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #28a745;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  .trending-items .item .thumb .status-badge.ultimas {
+    background: #dc3545;
+  }
+  
+  .trending-items .item .down-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trending-items .item .down-content .diploma-type {
+    color: #7c3aed;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .trending-items .item .down-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .trending-items .item .down-content .diploma-info {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #666;
+    flex-wrap: wrap;
+  }
+  
+  .trending-items .item .down-content .diploma-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .trending-items .item .down-content .diploma-info i {
+    font-size: 14px;
+    color: #7c3aed;
+  }
+  
+  .trending-items .item .down-content .inscripcion-status {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #28a745;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .trending-items .item .down-content .category {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    height: 36px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .trending-items .item {
+    cursor: pointer;
+  }
+  
+  .trending-items .item:active {
+    transform: translateY(-3px);
+  }
 </style>
   <div class="page-heading header-text">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h3>Maestrias</h3>
+          <h3>Maestrías</h3>
           
         </div>
       </div>
@@ -152,150 +342,148 @@
   <div class="section trending">
     <div class="container">
       <ul class="trending-filter">
-
         <li>
-          <!-- <a href="#!" data-filter=".ofer">Ofertados</a>   -->
           <a class="is_active" href="maestrias.htm#!" data-filter=".ofertados">Ofertados</a>
-
         </li>
         <li>
           <a href="maestrias.htm#!" data-filter=".encurso">En Curso </a>
         </li>
-       <!--  <li>
-          <a href="#!" data-filter=".fin">Finalizados</a>
-        </li> -->
         <li>
-          <a class="#!" href="maestrias.htm#!" data-filter="*">Todos</a>
+          <a href="maestrias.htm#!" data-filter="*">Todos</a>
         </li>
-
       </ul>
-      <div class="row trending-box">
+      
+      <div class="row">
+        <!-- Columna principal con las maestrías -->
+        <div class="col-lg-9">
+          <div class="row trending-box">
 
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso sistemas">
           <div class="item">
             <div class="thumb">
               <a href="maes-swia-1v.htm"><img src="assets/images/programas/maes-swia-1v-03.jpg" alt="maes-swia-1v"></a>
-              <span class="price"><em></em>Bs. 20.000</span>
+              <span class="price">Bs 20000</span>
+              <span class="status-badge">EN CURSO</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Maestría</span>
+              <h4>SOFTWARE CON IA</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 18 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> PRESENCIAL</span>
+              </div>
+              <div class="inscripcion-status">EN DESARROLLO</div>
               <span class="category">Profesionales</span>
-               <a href="maes-swia-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
         <!-- fin slider --> 
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados ingenieria">
           <div class="item">
             <div class="thumb">
               <a href="maes-imanufactura-1v.htm"><img src="assets/images/programas/maes-imanufactura-1v-09.jpg" alt="maes-imanufactura-1v"></a>
-              <span class="price"><em></em>Bs. 22.610</span>
+              <span class="price">Bs 22610</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Maestría</span>
+              <h4>INGENIERÍA EN MANUFACTURA</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 18 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> PRESENCIAL</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Profesionales</span>
-               <a href="maes-imanufactura-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
         <!-- fin slider --> 
 
-
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items ofertados sistemas">
           <div class="item">
             <div class="thumb">
               <a href="maes-sigcma-v15.htm"><img src="assets/images/programas/maes-sigcma-v15-11.jpg" alt="maes-sigcma-v15"></a>
-              <span class="price"><em></em>Bs. 23.655</span>
+              <span class="price">Bs 23655</span>
+              <span class="status-badge abiertas">ABIERTAS 2026</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Maestría</span>
+              <h4>SISTEMAS INTEGRADOS DE GESTIÓN</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 18 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> PRESENCIAL</span>
+              </div>
+              <div class="inscripcion-status">INSCRIPCIONES ABIERTAS</div>
               <span class="category">Profesionales</span>
-               <a href="maes-sigcma-v15.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
         <!-- fin slider --> 
 
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso sistemas">
           <div class="item">
             <div class="thumb">
               <a href="maes-iaedusup-1v.htm"><img src="assets/images/programas/maes-iaedusup-1v-05.jpg" alt="maes-iaedusup-1v"></a>
-              <span class="price"><em></em>Bs. 12.500,00</span>
+              <span class="price">Bs 12500</span>
+              <span class="status-badge">EN CURSO</span>
             </div>           
             <div class="down-content">
+              <span class="diploma-type">Maestría</span>
+              <h4>INNOVACIÓN APLICADA A LA EDUCACIÓN SUPERIOR</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 18 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> PRESENCIAL</span>
+              </div>
+              <div class="inscripcion-status">EN DESARROLLO</div>
               <span class="category">Profesionales</span>
-               <a href="maes-iaedusup-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>
         <!-- fin slider --> 
 
-
-      
-        
-
-
         <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        <!--
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 ofertados">
-          <div class="item">
-            <div class="thumb">
-              <a href="maes-estadisticacd-1v.htm"><img src="assets/images/programas/maes-estadisticacd-1v-04.jpg" alt="maes-estadisticacd-1v"></a>
-              <span class="price"><em></em>Bs. 22.984,00</span>
-            </div>
-            <div class="down-content">
-              <span class="category">Profesionales</span>
-               <a href="maes-estadisticacd-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-            </div>
-          </div>
-        </div>--> 
-        <!-- fin slider --> 
-
-
-
-
-        <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        <!--
-        
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
-          <div class="item">
-            <div class="thumb">
-              <a href="maesc-modsisenergeticos-1v.htm"><img src="assets/images/programas/maesc-modsisenergeticos-1v-04.jpg" alt="maesc-modsisenergeticos-1v"></a>
-              <span class="price"><em></em>Bs. 3.500.-</span>
-            </div>
-            <div class="down-content">
-              <span class="category">Profesionales</span>
-               <a href="maesc-modsisenergeticos-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
-            </div>
-          </div>
-        </div>    --> 
-        <!-- fin slider --> 
-
-        <!--slider  en la fila siguiente ofer es ofertados curs en curso fin finalizados-->
-        
-
-        <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 encurso">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 trending-items encurso logistica">
           <div class="item">
             <div class="thumb">
               <a href="maes-logisticaegcs-1v.htm"><img src="assets/images/programas/maes-logisticaegcs-1v-12.jpg" alt="maes-logisticaegcs-1v"></a>
-              <span class="price"><em></em>Bs. 22.269</span>
+              <span class="price">Bs 22269</span>
+              <span class="status-badge">EN CURSO</span>
             </div>
             <div class="down-content">
+              <span class="diploma-type">Maestría</span>
+              <h4>LOGÍSTICA Y GESTIÓN DE LA CADENA DE SUMINISTRO</h4>
+              <div class="diploma-info">
+                <span><i class="fa-regular fa-clock"></i> 18 MESES</span>
+                <span><i class="fa-solid fa-laptop"></i> PRESENCIAL</span>
+              </div>
+              <div class="inscripcion-status">EN DESARROLLO</div>
               <span class="category">Profesionales</span>
-               <a href="maes-logisticaegcs-1v.htm"><i class="fa-regular fa-eye fa-xl"></i></a>
             </div>
           </div>
         </div>   
 
         <!-- fin slider -->    
 
+      </div>
+        </div>
+        
+        <!-- Filtro por área -->
+        <div class="col-lg-3">
+          <div class="area-filter">
+            <h4>Filtrar por Área</h4>
+            <button class="area-filter-button active" data-area="*">Todos</button>
+            <button class="area-filter-button" data-area="ingenieria">Ingeniería</button>
+            <button class="area-filter-button" data-area="sistemas">Sistemas</button>
+            <button class="area-filter-button" data-area="estadistica">Estadística</button>
+            <button class="area-filter-button" data-area="logistica">Logística</button>
+          </div>
+        </div>
       </div> 
 
         
@@ -315,6 +503,35 @@
     
     </div>
   </div>
+  
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Filtro por área
+      $('.area-filter-button').click(function() {
+        $('.area-filter-button').removeClass('active');
+        $(this).addClass('active');
+        
+        var area = $(this).data('area');
+        
+        // Filtrar maestrías
+        if (area === '*') {
+          $('.trending-items').show();
+        } else {
+          $('.trending-items').hide();
+          $('.trending-items.' + area).show();
+        }
+      });
+      
+      // Hacer las tarjetas clickeables
+      $('.trending-items .item').click(function() {
+        var link = $(this).find('.thumb a').attr('href');
+        if (link) {
+          window.location.href = link;
+        }
+      });
+    });
+  </script>
 
    
 

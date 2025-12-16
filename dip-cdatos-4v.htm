@@ -262,6 +262,97 @@
     font-size: 20px;
   }
   
+  /* Estilos para el modal visor de PDF */
+  .pdf-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    overflow: auto;
+  }
+  
+  .pdf-modal-content {
+    background-color: #fefefe;
+    margin: 2% auto;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pdf-modal-header {
+    padding: 20px 30px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e0e0e0;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .pdf-modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .pdf-modal-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn-modal {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .btn-descargar {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .btn-descargar:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+  }
+  
+  .btn-cerrar {
+    background: #6c757d;
+    color: white;
+  }
+  
+  .btn-cerrar:hover {
+    background: #5a6268;
+  }
+  
+  .pdf-modal-body {
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+    background: #525659;
+  }
+  
+  .pdf-modal-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
   .tab-content {
     padding: 20px 0;
   }
@@ -322,14 +413,14 @@
             <div class="descarga-section">
               <h5>Descarga de Archivos:</h5>
               <div class="descarga-botones">
-                <a href="assets/download/compromiso-estudio-dipcdatos-4v.pdf" download class="btn-descarga">
-                  <i class="fa-solid fa-download"></i> Compromiso
+                <a href="#" class="btn-descarga" onclick="abrirPDF('assets/download/compromiso-1.pdf', 'Compromiso', event)">
+                  <i class="fa-solid fa-file-pdf"></i> Compromiso
                 </a>
-                <a href="assets/download/ficha-inscripcion-dipcdatos-4v.docx" download class="btn-descarga">
-                  <i class="fa-solid fa-download"></i> Ficha de Inscripción
+                <a href="#" class="btn-descarga" onclick="abrirPDF('assets/download/inf-maes-swia-1v.pdf', 'Ficha de Inscripción', event)">
+                  <i class="fa-solid fa-file-pdf"></i> Ficha de Inscripción
                 </a>
-                <a href="assets/download/inf-dip-cdatos-4v-04.pdf" download class="btn-descarga">
-                  <i class="fa-solid fa-download"></i> Brochure
+                <a href="#" class="btn-descarga" onclick="abrirPDF('assets/download/inf-dip-cdatos-4v.pdf', 'Brochure', event)">
+                  <i class="fa-solid fa-file-pdf"></i> Brochure
                 </a>
               </div>
             </div>
@@ -368,6 +459,72 @@
 </div>
 
   <!-- ***** separador  inicio ***** -->
+
+<!-- Modal para visualizar PDFs -->
+<div id="pdfModal" class="pdf-modal">
+  <div class="pdf-modal-content">
+    <div class="pdf-modal-header">
+      <h3 id="pdfTitle">Documento</h3>
+      <div class="pdf-modal-buttons">
+        <button class="btn-modal btn-descargar" onclick="descargarArchivo()">
+          <i class="fa-solid fa-download"></i> Descargar
+        </button>
+        <button class="btn-modal btn-cerrar" onclick="cerrarModal()">
+          <i class="fa-solid fa-xmark"></i> Cerrar
+        </button>
+      </div>
+    </div>
+    <div class="pdf-modal-body">
+      <iframe id="pdfViewer" src=""></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentFileUrl = '';
+  let currentFileName = '';
+
+  function abrirPDF(url, titulo, event) {
+    event.preventDefault();
+    
+    currentFileUrl = url;
+    currentFileName = titulo;
+    
+    document.getElementById('pdfTitle').textContent = titulo;
+    
+    // Para archivos PDF mostrar directamente
+    if (url.endsWith('.pdf')) {
+      document.getElementById('pdfViewer').src = url;
+    } else if (url.endsWith('.docx') || url.endsWith('.doc')) {
+      // Para archivos Word, usar Google Docs Viewer
+      document.getElementById('pdfViewer').src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(window.location.origin + '/' + url) + '&embedded=true';
+    }
+    
+    document.getElementById('pdfModal').style.display = 'block';
+  }
+
+  function cerrarModal() {
+    document.getElementById('pdfModal').style.display = 'none';
+    document.getElementById('pdfViewer').src = '';
+  }
+
+  function descargarArchivo() {
+    const link = document.createElement('a');
+    link.href = currentFileUrl;
+    link.download = currentFileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  // Cerrar modal al hacer clic fuera del contenido
+  window.onclick = function(event) {
+    const modal = document.getElementById('pdfModal');
+    if (event.target == modal) {
+      cerrarModal();
+    }
+  }
+</script>
 
 
 

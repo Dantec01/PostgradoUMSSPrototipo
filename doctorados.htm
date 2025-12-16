@@ -134,6 +134,218 @@
 
 
 
+<style>
+  .fa-regular{
+    margin-top: 20px;
+  }
+  
+  /* Estilos para el filtro de área */
+  .area-filter {
+    background: #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    position: sticky;
+    top: 20px;
+  }
+  
+  .area-filter h4 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  .area-filter-button {
+    display: block;
+    width: 100%;
+    padding: 8px 15px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: white;
+  }
+  
+  .area-filter-button.active {
+    background: #dc3545;
+  }
+  
+  .area-filter-button:not(.active) {
+    background: #6c757d;
+  }
+  
+  .area-filter-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  /* Nuevos estilos para las tarjetas */
+  .trending-items {
+    margin-bottom: 30px;
+  }
+  
+  .trending-items .item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trending-items .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  
+  .trending-items .item .thumb {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+  }
+  
+  .trending-items .item .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .trending-items .item .thumb .price {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: white;
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-weight: 700;
+    color: #333;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  
+  .trending-items .item .thumb .status-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #28a745;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  .trending-items .item .thumb .status-badge.ultimas {
+    background: #dc3545;
+  }
+  
+  .trending-items .item .down-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trending-items .item .down-content .diploma-type {
+    color: #7c3aed;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .trending-items .item .down-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .trending-items .item .down-content .diploma-info {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #666;
+    flex-wrap: wrap;
+  }
+  
+  .trending-items .item .down-content .diploma-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .trending-items .item .down-content .diploma-info i {
+    font-size: 14px;
+    color: #7c3aed;
+  }
+  
+  .trending-items .item .down-content .inscripcion-status {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #28a745;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .trending-items .item .down-content .category {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    height: 36px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .trending-items .item {
+    cursor: pointer;
+  }
+  
+  .trending-items .item:active {
+    transform: translateY(-3px);
+  }
+  
+  .no-programas {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+  }
+  
+  .no-programas h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .no-programas p {
+    font-size: 16px;
+  }
+</style>
+
   <div class="page-heading header-text">
     <div class="container">
       <div class="row">
@@ -152,26 +364,43 @@
           <a class="is_active" href="doctorados.htm#!" data-filter="*">Todos</a>
         </li>
         <li>
-          <a href="doctorados.htm#!" data-filter=".ofer">Ofertados</a>
+          <a href="doctorados.htm#!" data-filter=".ofertados">Ofertados</a>
         </li>
         <li>
-          <a href="doctorados.htm#!" data-filter=".curs">En Curso </a>
-        </li>
-        <li>
-          <a href="doctorados.htm#!" data-filter=".fin">Finalizados</a>
+          <a href="doctorados.htm#!" data-filter=".encurso">En Curso </a>
         </li>
       </ul>
-      <div class="row trending-box">
-      <!-- slider-->
-        
-      <!-- fin slider-->
+      
+      <div class="row">
+        <!-- Columna principal con los doctorados -->
+        <div class="col-lg-9">
+          <div class="row trending-box">
+      
+      <!-- Mensaje cuando no hay programas -->
+      <div class="col-lg-12">
+        <div class="no-programas">
+          <h3>Próximamente</h3>
+          <p>Actualmente no hay programas de doctorado disponibles. Por favor, consulte más tarde.</p>
+        </div>
+      </div>
         
         
         
 
-      </div> 
-
+      </div>
+        </div>
         
+        <!-- Filtro por área -->
+        <div class="col-lg-3">
+          <div class="area-filter">
+            <h4>Filtrar por Área</h4>
+            <button class="area-filter-button active" data-area="*">Todos</button>
+            <button class="area-filter-button" data-area="ingenieria">Ingeniería</button>
+            <button class="area-filter-button" data-area="sistemas">Sistemas</button>
+            <button class="area-filter-button" data-area="ciencias">Ciencias</button>
+          </div>
+        </div>
+      </div>
 
       <div class="row">
         <div class="col-lg-12">
@@ -187,6 +416,35 @@
     
     </div>
   </div>
+  
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Filtro por área
+      $('.area-filter-button').click(function() {
+        $('.area-filter-button').removeClass('active');
+        $(this).addClass('active');
+        
+        var area = $(this).data('area');
+        
+        // Filtrar doctorados
+        if (area === '*') {
+          $('.trending-items').show();
+        } else {
+          $('.trending-items').hide();
+          $('.trending-items.' + area).show();
+        }
+      });
+      
+      // Hacer las tarjetas clickeables
+      $('.trending-items .item').click(function() {
+        var link = $(this).find('.thumb a').attr('href');
+        if (link) {
+          window.location.href = link;
+        }
+      });
+    });
+  </script>
 
    
 
