@@ -134,116 +134,632 @@
 
 
 
-<div class="page-heading header-text">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h2>Diplomados</h2>
-          </div>
-      </div>
+<style>
+  .programa-detalle {
+    background: #f8f9fa;
+    padding: 60px 0;
+  }
+  
+  .ficha-header {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .ficha-header p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .programa-titulo {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 50px;
+  }
+  
+  .programa-content {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+  
+  .programa-imagen {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+  }
+  
+  .programa-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .programa-descripcion {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+  }
+  
+  .programa-descripcion p {
+    margin-bottom: 20px;
+  }
+  
+  .tabs-section {
+    margin-top: 50px;
+  }
+  
+  .tabs-section .nav-tabs {
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 30px;
+  }
+  
+  .tabs-section .nav-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #666;
+    font-weight: 600;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .tabs-section .nav-tabs .nav-link:hover {
+    color: #7c3aed;
+    border-bottom-color: #7c3aed;
+  }
+  
+  .tabs-section .nav-tabs .nav-link.active {
+    color: #7c3aed;
+    border-bottom-color: #7c3aed;
+    background: transparent;
+  }
+  
+  .descarga-section {
+    margin-top: 40px;
+  }
+  
+  .descarga-section h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 20px;
+  }
+  
+  .descarga-botones {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .btn-descarga {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  
+  .btn-descarga:hover {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124,58,237,0.3);
+  }
+  
+  .btn-descarga i {
+    font-size: 20px;
+  }
+  
+  /* Estilos para el modal visor de PDF */
+  .pdf-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    overflow: auto;
+  }
+  
+  .pdf-modal-content {
+    background-color: #fefefe;
+    margin: 2% auto;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pdf-modal-header {
+    padding: 20px 30px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e0e0e0;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .pdf-modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .pdf-modal-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn-modal {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .btn-descargar {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .btn-descargar:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+  }
+  
+  .btn-cerrar {
+    background: #6c757d;
+    color: white;
+  }
+  
+  .btn-cerrar:hover {
+    background: #5a6268;
+  }
+  
+  .pdf-modal-body {
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+    background: #525659;
+  }
+  
+  .pdf-modal-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .tab-content {
+    padding: 20px 0;
+  }
+  
+  .requisitos-lista {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .requisitos-lista li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+  }
+  
+  .requisitos-lista li:last-child {
+    border-bottom: none;
+  }
+</style>
+
+<style>
+  .programa-detalle {
+    background: #f8f9fa;
+    padding: 60px 0;
+  }
+  
+  .ficha-header {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .ficha-header p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .programa-titulo {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 50px;
+  }
+  
+  .programa-content {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+  
+  .programa-imagen {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+  }
+  
+  .programa-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .programa-descripcion {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+  }
+  
+  .programa-descripcion p {
+    margin-bottom: 20px;
+  }
+  
+  .tabs-section {
+    margin-top: 50px;
+  }
+  
+  .tabs-section .nav-tabs {
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 30px;
+  }
+  
+  .tabs-section .nav-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #666;
+    font-weight: 600;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .tabs-section .nav-tabs .nav-link:hover {
+    color: #7c3aed;
+    border-bottom-color: #7c3aed;
+  }
+  
+  .tabs-section .nav-tabs .nav-link.active {
+    color: #7c3aed;
+    border-bottom-color: #7c3aed;
+    background: transparent;
+  }
+  
+  .descarga-section {
+    margin-top: 40px;
+  }
+  
+  .descarga-section h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 20px;
+  }
+  
+  .descarga-botones {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .btn-descarga {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  
+  .btn-descarga:hover {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124,58,237,0.3);
+  }
+  
+  .btn-descarga i {
+    font-size: 20px;
+  }
+  
+  /* Estilos para el modal visor de PDF */
+  .pdf-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    overflow: auto;
+  }
+  
+  .pdf-modal-content {
+    background-color: #fefefe;
+    margin: 2% auto;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pdf-modal-header {
+    padding: 20px 30px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e0e0e0;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .pdf-modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .pdf-modal-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn-modal {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .btn-descargar {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .btn-descargar:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+  }
+  
+  .btn-cerrar {
+    background: #6c757d;
+    color: white;
+  }
+  
+  .btn-cerrar:hover {
+    background: #5a6268;
+  }
+  
+  .pdf-modal-body {
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+    background: #525659;
+  }
+  
+  .pdf-modal-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .tab-content {
+    padding: 20px 0;
+  }
+  
+  .requisitos-lista {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .requisitos-lista li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+  }
+  
+  .requisitos-lista li:last-child {
+    border-bottom: none;
+  }
+</style>
+
+
+<div class="programa-detalle">
+  <div class="container">
+    <div class="ficha-header">
+      <p>Ficha del Programa</p>
     </div>
-  </div>
-
-  <div class="single-product section">
-    <div class="container">
+    <h1 class="programa-titulo">Estadística Aplicada</h1>
+    
+    <div class="programa-content">
       <div class="row">
-        <div class="col-lg-6">
-          <div class="left-image">
-            <img src="assets/images/programas/dip-estadistica-4v-08.jpg" alt="dip-estadistica-4v">
+        <div class="col-lg-5">
+          <div class="programa-imagen">
+            <img src="assets/images/programas/dip-estadistica-4v.jpg" alt="Estadística Aplicada">
           </div>
         </div>
-        <div class="col-lg-6 align-self-center">
-          <h4> DIPLOMADO EN ESTADÍSTICA APLICADA A LA TOMA DE DECISIONES - 4TA. VERSIÓN
-</h4>
-          <span class="price">  BS 5500 
- </span>
-          
-          <ul>
-            <li><span>Grado Académico:</span> Diplomado
-</li>
-            <li><span>Costo por modulo:</span>917
- Bs</li>
-            <li><span>Descuento:</span>No aplica descuentos 
-</li>
-            <li><span>Modalidad:</span>Modalidad de Graduación por Diplomado, Profesionales
-</li>
-            <li><span>Fecha de Inicio:</span>16 de Febrero de 2026
-</li>
-          </ul> 
-          <br>
-          <br>
-
-
-          
-          <a href="assets/download/compromiso-estudio-dipestadistica-4v-02.pdf" download="compromiso.pdf" class="boton-descarga"><i class="fa-solid fa-rectangle-list fa-xl"></i> Descarga el Compromiso</a>
-          <br><br>
-          <a href="assets/download/ficha-inscripcion-dipestadistica-4v.docx" download="ficha.docx" class="boton-descarga"><i class="fa-brands fa-wpforms fa-2xl"></i> Ficha de inscripción</a>
-          <br><br>
-          <a href="assets/download/inf-dip-estadistica-4v-04.pdf" download="inf-dip-estadistica-4v.pdf" class="boton-descarga"><i class="fa-solid fa-file-export fa-xl"></i> Descarga el Brochure</a>
-          <br><br>
-                    
+        <div class="col-lg-7">
+          <div class="programa-descripcion">
+            <p>El Diplomado en Estadística Aplicada proporciona herramientas estadísticas para el análisis e interpretación de datos en diversos campos.</p>
+          </div>
         </div>
+      </div>
+      
+      <div class="tabs-section">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="descripcion-tab" data-bs-toggle="tab" data-bs-target="#descripcion" type="button" role="tab">Descripción</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="detalles-tab" data-bs-toggle="tab" data-bs-target="#detalles" type="button" role="tab">Detalles del programa</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="requisitos-tab" data-bs-toggle="tab" data-bs-target="#requisitos" type="button" role="tab">Requisitos</button>
+          </li>
+        </ul>
         
-      </div>
-    </div>
-  </div>
-  <!-- ***** separador  inicio ***** -->
-  <div class="single-product section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="sep"></div>
-        </div>
-      </div>
-    </div>
-  </div>
- <!--***** separador fin ***** -->
-  <div class="more-info">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="tabs-content">
-            <div class="row">
-              <div class="nav-wrapper ">
-                <ul class="nav nav-tabs" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Descripción</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Requisitos</button>
-                  </li>
-                </ul>
-              </div>              
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                <ul>El diplomado tiene como propósito el proporcionar a los participantes una sólida formación en la aplicación de la estadística, fortaleciendo los conocimientos, proporcionando herramientas y desarrollando competencias que permitan potenciar capacidades de organización, descripción y predicción del comportamiento de datos, enmarcados en la gestión de los mismos utilizando software especializado para la elaboración de algoritmos de automatización, dando soporte a la toma de decisiones.
-
-                </ul> 
-
-
-                </div>
-                <div class="tab-pane fade lista2 single-product2 " id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-                <ul> <li>Carta de solicitud de inscripción dirigida a la Directora de Posgrado<span2></span2></li>
-                    <li>Ficha de inscripción</li>
-                    <li>Compromiso de Estudios</span2></li>
-                    <li>Currículum Vitae<span2>(no documentado)</span></li>
-                    <li>Carnet de Identidad<span2>(anverso y reverso)</span2></li>
-                    <li>Diploma Académico o Título en Provisión Nacional<span2>(anverso y reverso)(Solo para prosefionales)</span2></li>
-                    <li>Kardex Académico emitido por la Unidad de KARDEX FCyT<span2>(Requisito para los interesados de Modalidad en Titulación)</span2></li>
-                    <li>Certificado de Conclusión de Estudios<span2>(expedido por Dirección de Carrera, requisito para interesados en la Modalidad de Titulación)</span2></li>
-
-                    
-                </ul> 
-                
-                
-                </div>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="descripcion" role="tabpanel">
+            <div class="descarga-section">
+              <h5>Descarga de Archivos:</h5>
+              <div class="descarga-botones">
+                <a href="#" class="btn-descarga" onclick="abrirPDF('assets/download/compromiso-1.pdf', 'Compromiso', event)">
+                  <i class="fa-solid fa-file-pdf"></i> Compromiso
+                </a>
+                <a href="#" class="btn-descarga" onclick="abrirPDF('assets/download/inf-maes-swia-1v.pdf', 'Ficha de Inscripción', event)">
+                  <i class="fa-solid fa-file-pdf"></i> Ficha de Inscripción
+                </a>
+                <a href="#" class="btn-descarga" onclick="abrirPDF('assets/download/inf-dip-cdatos-4v.pdf', 'Brochure', event)">
+                  <i class="fa-solid fa-file-pdf"></i> Brochure
+                </a>
               </div>
             </div>
           </div>
+          
+          <div class="tab-pane fade" id="detalles" role="tabpanel">
+            <div class="programa-descripcion">
+              <ul>
+                <li><strong>Grado Académico:</strong> Diplomado</li>
+                <li><strong>Costo:</strong> BS 5600</li>
+                <li><strong>Costo por módulo:</strong> 800 Bs</li>
+                <li><strong>Duración:</strong> 6 MESES</li>
+                <li><strong>Modalidad de Estudio:</strong> Virtual</li>
+                
+              </ul>
+            </div>
+          </div>
+          
+          <div class="tab-pane fade" id="requisitos" role="tabpanel">
+            <ul class="requisitos-lista">
+              <li>Carta de solicitud de inscripción dirigida a la Directora de Posgrado</li>
+              <li>Ficha de inscripción</li>
+              <li>Compromiso de Estudios</li>
+              <li>Currículum Vitae (no documentado)</li>
+              <li>Carnet de Identidad (anverso y reverso)</li>
+              
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal para visualizar PDFs -->
+<div id="pdfModal" class="pdf-modal">
+  <div class="pdf-modal-content">
+    <div class="pdf-modal-header">
+      <h3 id="pdfTitle">Documento</h3>
+      <div class="pdf-modal-buttons">
+        <button class="btn-modal btn-descargar" onclick="descargarArchivo()">
+          <i class="fa-solid fa-download"></i> Descargar
+        </button>
+        <button class="btn-modal btn-cerrar" onclick="cerrarModal()">
+          <i class="fa-solid fa-xmark"></i> Cerrar
+        </button>
+      </div>
+    </div>
+    <div class="pdf-modal-body">
+      <iframe id="pdfViewer" src=""></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentFileUrl = '';
+  let currentFileName = '';
+
+  function abrirPDF(url, titulo, event) {
+    event.preventDefault();
+    
+    currentFileUrl = url;
+    currentFileName = titulo;
+    
+    document.getElementById('pdfTitle').textContent = titulo;
+    
+    // Para archivos PDF mostrar directamente
+    if (url.endsWith('.pdf')) {
+      document.getElementById('pdfViewer').src = url;
+    } else if (url.endsWith('.docx') || url.endsWith('.doc')) {
+      // Para archivos Word, usar Google Docs Viewer
+      document.getElementById('pdfViewer').src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(window.location.origin + '/' + url) + '&embedded=true';
+    }
+    
+    document.getElementById('pdfModal').style.display = 'block';
+  }
+
+  function cerrarModal() {
+    document.getElementById('pdfModal').style.display = 'none';
+    document.getElementById('pdfViewer').src = '';
+  }
+
+  function descargarArchivo() {
+    const link = document.createElement('a');
+    link.href = currentFileUrl;
+    link.download = currentFileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  // Cerrar modal al hacer clic fuera del contenido
+  window.onclick = function(event) {
+    const modal = document.getElementById('pdfModal');
+    if (event.target == modal) {
+      cerrarModal();
+    }
+  }
+</script>
+
 
   <!-- ***** separador  inicio ***** -->
   <div class="single-product section">
