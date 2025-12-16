@@ -137,7 +137,7 @@
 <style>
   .programa-detalle {
     background: #f8f9fa;
-    padding: 60px 0;
+    padding: 120px 0 60px 0;
   }
   
   .ficha-header {
@@ -167,7 +167,7 @@
   }
   
   .programa-imagen {
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 3px 15px rgba(0,0,0,0.15);
   }
@@ -208,13 +208,13 @@
   }
   
   .tabs-section .nav-tabs .nav-link:hover {
-    color: #7c3aed;
-    border-bottom-color: #7c3aed;
+    color: #004a92;
+    border-bottom-color: #004a92;
   }
   
   .tabs-section .nav-tabs .nav-link.active {
-    color: #7c3aed;
-    border-bottom-color: #7c3aed;
+    color: #004a92;
+    border-bottom-color: #004a92;
     background: transparent;
   }
   
@@ -251,11 +251,11 @@
   }
   
   .btn-descarga:hover {
-    background: #7c3aed;
-    border-color: #7c3aed;
+    background: #cc0000;
+    border-color: #cc0000;
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(124,58,237,0.3);
+    box-shadow: 0 4px 12px rgba(204,0,0,0.3);
   }
   
   .btn-descarga i {
@@ -376,7 +376,7 @@
 <style>
   .programa-detalle {
     background: #f8f9fa;
-    padding: 60px 0;
+    padding: 120px 0 60px 0;
   }
   
   .ficha-header {
@@ -406,7 +406,7 @@
   }
   
   .programa-imagen {
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 3px 15px rgba(0,0,0,0.15);
   }
@@ -447,13 +447,13 @@
   }
   
   .tabs-section .nav-tabs .nav-link:hover {
-    color: #7c3aed;
-    border-bottom-color: #7c3aed;
+    color: #004a92;
+    border-bottom-color: #004a92;
   }
   
   .tabs-section .nav-tabs .nav-link.active {
-    color: #7c3aed;
-    border-bottom-color: #7c3aed;
+    color: #004a92;
+    border-bottom-color: #004a92;
     background: transparent;
   }
   
@@ -490,11 +490,11 @@
   }
   
   .btn-descarga:hover {
-    background: #7c3aed;
-    border-color: #7c3aed;
+    background: #cc0000;
+    border-color: #cc0000;
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(124,58,237,0.3);
+    box-shadow: 0 4px 12px rgba(204,0,0,0.3);
   }
   
   .btn-descarga i {
@@ -615,6 +615,11 @@
 
 <div class="programa-detalle">
   <div class="container">
+    <div class="mb-3">
+        <a href="javascript:history.back()" class="btn btn-danger btn-sm" style="text-decoration: none;">
+            <i class="fa fa-arrow-left"></i> Volver
+        </a>
+    </div>
     <div class="ficha-header">
       <p>Ficha del Programa</p>
     </div>
@@ -779,17 +784,40 @@
 
 
 
+  
+  <a href="https://api.whatsapp.com/send?phone=59144116122" class="btn-wsp" target="_blank">
+	    <i class="fa-brands fa-whatsapp " style="color: #ffffff;"></i>
+	</a>
+
+   <!-- ***** footer inicio ***** -->
+  
   <a href="https://www.facebook.com/posgradofcyt" class="btn-fk" target="_blank">
 	    <i class="fa-brands fa-facebook-f  " style="color: #ffffff;"></i>
 	</a>
   <a href="https://www.instagram.com/posgradooficialfcyt/" class="btn-insta" target="_blank">
 	    <i class="fa-brands fa-instagram  " style="color: #ffffff;"></i>
 	</a>
-  <a href="https://api.whatsapp.com/send?phone=59144116122" class="btn-wsp" target="_blank">
-	    <i class="fa-brands fa-whatsapp " style="color: #ffffff;"></i>
-	</a>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <span>Chatbot</span>
+      <button id="closeChat" style="background:none;border:none;color:white;font-size:16px;cursor:pointer;">&times;</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message bot">Hola, en que te puedo ayudar?</div>
+      <button class="chat-option" onclick="sendOption('Como inscribirme a un programa?')">Como inscribirme a un programa?</button>
+      <button class="chat-option" onclick="sendOption('Que diplomados hay para informática?')">Que diplomados hay para informática?</button>
+      <button class="chat-option" onclick="sendOption('Con quien me puedo comunicar para obtener mas información?')">Con quien me puedo comunicar para obtener mas información?</button>
+    </div>
+    <div class="chat-footer">
+      <input type="text" placeholder="Escribe tu mensaje..." disabled>
+      <button disabled><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
 
-   <!-- ***** footer inicio ***** -->
+  <a href="#" class="btn-chat" id="chatBtn">
+      <i class="fa-solid fa-robot" style="color: #ffffff;"></i>
+  </a>
+
   <footer>
     <div class="container">
       <div class="col-lg-12">
@@ -849,5 +877,7 @@
   
   
  
+  <script src="assets/js/chatbot.js"></script>
+  
   </body>
 </html>

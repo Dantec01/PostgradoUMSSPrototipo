@@ -14,7 +14,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
+  border-radius: 8px;
   background: #004a92;
   transition: all 0.5s ease-in-out;
 }
@@ -124,9 +124,9 @@
 .tranding-slide .tranding-slide-img img {
   width: 30rem;
   height: 40rem;
-  border-radius: 1rem;
-  object-fit:scale-down;
-  background-color: #004a92;
+  border-radius: 8px;
+  object-fit: scale-down;
+  object-position: bottom;
 }
 
 .tranding-slide .tranding-slide-content {
@@ -143,28 +143,36 @@
 }
 
 .tranding-slide-content .food-price {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  color:white;
-  -webkit-text-stroke: 1px rgb(88, 87, 87);
+  display: none;
 }
 
 
 .tranding-slide-content .tranding-slide-content-bottom {
   position: absolute;
-  bottom: 0rem;
-  left: 2rem;
-  color:white;
-  -webkit-text-stroke: 1px rgb(88, 87, 87);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #004a92;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  pointer-events: auto;
 }
 
 .tranding-slide-content .food-name  {
-  text-align: center;
-  top: 2rem;
-  right: 2rem;
-  color:white;
-  -webkit-text-stroke: 1px rgb(88, 87, 87);
+  margin: 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.tranding-slide-content .food-price-bottom {
+  margin: 0;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
 }
 
 

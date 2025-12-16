@@ -192,7 +192,7 @@
   
   .trending-items .item {
     background: white;
-    border-radius: 12px;
+    border-radius: 0px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -452,17 +452,40 @@
 
 
 
+  
+  <a href="https://api.whatsapp.com/send?phone=59144116122" class="btn-wsp" target="_blank">
+	    <i class="fa-brands fa-whatsapp " style="color: #ffffff;"></i>
+	</a>
+
+   <!-- ***** footer inicio ***** -->
+  
   <a href="https://www.facebook.com/posgradofcyt" class="btn-fk" target="_blank">
 	    <i class="fa-brands fa-facebook-f  " style="color: #ffffff;"></i>
 	</a>
   <a href="https://www.instagram.com/posgradooficialfcyt/" class="btn-insta" target="_blank">
 	    <i class="fa-brands fa-instagram  " style="color: #ffffff;"></i>
 	</a>
-  <a href="https://api.whatsapp.com/send?phone=59144116122" class="btn-wsp" target="_blank">
-	    <i class="fa-brands fa-whatsapp " style="color: #ffffff;"></i>
-	</a>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <span>Chatbot</span>
+      <button id="closeChat" style="background:none;border:none;color:white;font-size:16px;cursor:pointer;">&times;</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message bot">Hola, en que te puedo ayudar?</div>
+      <button class="chat-option" onclick="sendOption('Como inscribirme a un programa?')">Como inscribirme a un programa?</button>
+      <button class="chat-option" onclick="sendOption('Que diplomados hay para informática?')">Que diplomados hay para informática?</button>
+      <button class="chat-option" onclick="sendOption('Con quien me puedo comunicar para obtener mas información?')">Con quien me puedo comunicar para obtener mas información?</button>
+    </div>
+    <div class="chat-footer">
+      <input type="text" placeholder="Escribe tu mensaje..." disabled>
+      <button disabled><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
 
-   <!-- ***** footer inicio ***** -->
+  <a href="#" class="btn-chat" id="chatBtn">
+      <i class="fa-solid fa-robot" style="color: #ffffff;"></i>
+  </a>
+
   <footer>
     <div class="container">
       <div class="col-lg-12">
@@ -518,10 +541,11 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
-  <script src="assets/js/search-modal.js"></script>
+  
   
   
   
  
+  <script src="assets/js/chatbot.js"></script>
   </body>
 </html>

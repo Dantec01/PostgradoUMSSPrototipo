@@ -6894,7 +6894,7 @@ readers do not read off random characters that represent icons */
   line-height: 63px;
   bottom:212px;
   right:25px;
-  background:#004a92;
+  background:#dc3545;
   color:#FFF;
   border-radius:50px;
   text-align:center;
@@ -6904,7 +6904,7 @@ readers do not read off random characters that represent icons */
   transition: all 300ms ease;
 }
 .btn-chat:hover{
-  background: #003366;
+  background: #c82333;
 }
 @media only screen and (min-width:320px) and (max-width:768px){
   .btn-chat{
@@ -6929,7 +6929,7 @@ readers do not read off random characters that represent icons */
 }
 
 .chat-header {
-  background: #004a92;
+  background: #dc3545;
   color: #fff;
   padding: 10px 15px;
   display: flex;
@@ -6953,7 +6953,7 @@ readers do not read off random characters that represent icons */
 }
 
 .chat-message.bot {
-  background: #004a92;
+  background: #357ddc;
   color: #fff;
   border-bottom-left-radius: 0;
   width: fit-content;
@@ -6965,8 +6965,8 @@ readers do not read off random characters that represent icons */
   padding: 8px 10px;
   margin-bottom: 5px;
   background: #fff;
-  border: 1px solid #004a92;
-  color: #004a92;
+  border: 1px solid #1b5bad;
+  color: #1b5bad;
   border-radius: 20px;
   text-align: left;
   cursor: pointer;
@@ -6975,7 +6975,7 @@ readers do not read off random characters that represent icons */
 }
 
 .chat-option:hover {
-  background: #004a92;
+  background: #1b5bad;
   color: #fff;
 }
 
@@ -6998,6 +6998,6 @@ readers do not read off random characters that represent icons */
 .chat-footer button {
   background: none;
   border: none;
-  color: #004a92;
+  color: #1b5bad;
   cursor: pointer;
 }

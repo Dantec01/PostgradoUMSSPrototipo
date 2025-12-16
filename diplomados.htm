@@ -176,7 +176,7 @@
   }
   
   .area-filter-button.active {
-    background: #dc3545;
+    background: #cc0000;
   }
   
   .area-filter-button:not(.active) {
@@ -195,11 +195,11 @@
   
   .trending-items .item {
     background: white;
-    border-radius: 12px;
+    border-radius: 0px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 580px;
+    min-height: 580px; height: auto;
     display: flex;
     flex-direction: column;
   }
@@ -225,11 +225,11 @@
     position: absolute;
     top: 12px;
     right: 12px;
-    background: white;
+    background: #004a92;
     padding: 6px 18px;
     border-radius: 25px;
     font-weight: 700;
-    color: #333;
+    color: white;
     font-size: 15px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
@@ -238,7 +238,7 @@
     position: absolute;
     bottom: 12px;
     right: 12px;
-    background: #28a745;
+    background: #cc0000;
     color: white;
     padding: 6px 18px;
     border-radius: 5px;
@@ -250,7 +250,7 @@
   }
   
   .trending-items .item .thumb .status-badge.ultimas {
-    background: #dc3545;
+    background: #cc0000;
   }
   
   .trending-items .item .down-content {
@@ -261,7 +261,7 @@
   }
   
   .trending-items .item .down-content .diploma-type {
-    color: #7c3aed;
+    color: #004a92;
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -275,10 +275,10 @@
     color: #222;
     margin-bottom: 15px;
     line-height: 1.4;
-    height: 50px;
+    min-height: 50px;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    
   }
   
   .trending-items .item .down-content .diploma-info {
@@ -301,7 +301,7 @@
   
   .trending-items .item .down-content .diploma-info i {
     font-size: 14px;
-    color: #7c3aed;
+    color: #cc0000;
   }
   
   .trending-items .item .down-content .inscripcion-status {
@@ -2320,17 +2320,40 @@
 
 
 
+  
+  <a href="https://api.whatsapp.com/send?phone=59144116122" class="btn-wsp" target="_blank">
+	    <i class="fa-brands fa-whatsapp " style="color: #ffffff;"></i>
+	</a>
+
+   <!-- ***** footer inicio ***** -->
+  
   <a href="https://www.facebook.com/posgradofcyt" class="btn-fk" target="_blank">
 	    <i class="fa-brands fa-facebook-f  " style="color: #ffffff;"></i>
 	</a>
   <a href="https://www.instagram.com/posgradooficialfcyt/" class="btn-insta" target="_blank">
 	    <i class="fa-brands fa-instagram  " style="color: #ffffff;"></i>
 	</a>
-  <a href="https://api.whatsapp.com/send?phone=59144116122" class="btn-wsp" target="_blank">
-	    <i class="fa-brands fa-whatsapp " style="color: #ffffff;"></i>
-	</a>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <span>Chatbot</span>
+      <button id="closeChat" style="background:none;border:none;color:white;font-size:16px;cursor:pointer;">&times;</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message bot">Hola, en que te puedo ayudar?</div>
+      <button class="chat-option" onclick="sendOption('Como inscribirme a un programa?')">Como inscribirme a un programa?</button>
+      <button class="chat-option" onclick="sendOption('Que diplomados hay para informática?')">Que diplomados hay para informática?</button>
+      <button class="chat-option" onclick="sendOption('Con quien me puedo comunicar para obtener mas información?')">Con quien me puedo comunicar para obtener mas información?</button>
+    </div>
+    <div class="chat-footer">
+      <input type="text" placeholder="Escribe tu mensaje..." disabled>
+      <button disabled><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
 
-   <!-- ***** footer inicio ***** -->
+  <a href="#" class="btn-chat" id="chatBtn">
+      <i class="fa-solid fa-robot" style="color: #ffffff;"></i>
+  </a>
+
   <footer>
     <div class="container">
       <div class="col-lg-12">
@@ -2350,127 +2373,7 @@
   <!-- ***** footer  fin ***** -->
 
 <!-- Modal de Búsqueda Global -->
-<div id="searchModal" class="search-modal">
-  <div class="search-modal-content">
-    <div class="search-modal-header">
-      <div class="container">
-        <div class="search-modal-logo">
-          <img src="assets/images/logo.png" alt="DPG">
-        </div>
-        <span class="search-modal-close" onclick="cerrarModalBusqueda()">&times;</span>
-      </div>
-    </div>
-    
-    <div class="container">
-      <div class="search-filters-top">
-        <h3>BUSQUEDA</h3>
-        <div class="search-input-group">
-          <div class="search-input-wrapper">
-            <input type="text" id="searchInput" placeholder="Buscar......" />
-            <button class="btn-search-modal" onclick="realizarBusqueda()">BUSCAR</button>
-          </div>
-        </div>
-        
-        <div class="filter-selects">
-          <div class="filter-group">
-            <label>Grado</label>
-            <select id="gradoSelect" onchange="realizarBusqueda()">
-              <option value="todos">Todos</option>
-              <option value="Diplomado">Diplomado</option>
-              <option value="Maestría">Maestría</option>
-              <option value="Doctorado">Doctorado</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Modalidad</label>
-            <select id="modalidadSelect" onchange="realizarBusqueda()">
-              <option value="todos">Todos</option>
-              <option value="Presencial">Presencial</option>
-              <option value="Virtual">Virtual</option>
-              <option value="Híbrido">Híbrido</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Área</label>
-            <select id="areaSelect" onchange="realizarBusqueda()">
-              <option value="todos">Todos</option>
-              <option value="Informática">Tecnología y Sistemas</option>
-              <option value="Ingeniería">Ingeniería</option>
-              <option value="Educación">Educación</option>
-              <option value="Química">Ciencias</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      
-      <div class="search-content-wrapper">
-        <div class="search-results">
-          <div class="results-grid" id="searchResults">
-            <!-- Resultados se cargarán aquí dinámicamente -->
-          </div>
-        </div>
-        
-        <div class="search-sidebar">
-          <h4>Filtros de búsqueda</h4>
-          
-          <div class="filter-section">
-            <h5>Tipo de programa</h5>
-            <div class="filter-checkbox">
-              <input type="checkbox" id="filterDiplomados" onchange="aplicarFiltros()">
-              <label for="filterDiplomados">Diplomados</label>
-            </div>
-            <div class="filter-checkbox">
-              <input type="checkbox" id="filterMaestrias" onchange="aplicarFiltros()">
-              <label for="filterMaestrias">Maestrías</label>
-            </div>
-            <div class="filter-checkbox">
-              <input type="checkbox" id="filterDoctorados" onchange="aplicarFiltros()">
-              <label for="filterDoctorados">Doctorados</label>
-            </div>
-          </div>
-          
-          <div class="filter-section">
-            <h5>Modalidad</h5>
-            <div class="filter-checkbox">
-              <input type="checkbox" id="filterPresencial" onchange="aplicarFiltros()">
-              <label for="filterPresencial">Presencial</label>
-            </div>
-            <div class="filter-checkbox">
-              <input type="checkbox" id="filterVirtual" onchange="aplicarFiltros()">
-              <label for="filterVirtual">Virtual</label>
-            </div>
-            <div class="filter-checkbox">
-              <input type="checkbox" id="filterHibrido" onchange="aplicarFiltros()">
-              <label for="filterHibrido">Híbrido</label>
-            </div>
-          </div>
-          
-          <div class="filter-section">
-            <h5>Área</h5>
-            <div class="filter-checkbox">
-              <input type="checkbox" id="filterTecnologia" onchange="aplicarFiltros()">
-              <label for="filterTecnologia">Tecnología y sistemas</label>
-            </div>
-            <div class="filter-checkbox">
-              <input type="checkbox" id="filterNegocios" onchange="aplicarFiltros()">
-              <label for="filterNegocios">Negocios y Administración</label>
-            </div>
-            <div class="filter-checkbox">
-              <input type="checkbox" id="filterSalud" onchange="aplicarFiltros()">
-              <label for="filterSalud">Salud y Medicina</label>
-            </div>
-            <div class="filter-checkbox">
-              <input type="checkbox" id="filterEducacion" onchange="aplicarFiltros()">
-              <label for="filterEducacion">Educación y Pedagogía</label>
-            </div>
-          </div>
-          
-          <button class="btn-apply-filters" onclick="aplicarFiltros()">Aplicar Filtros</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
   <!-- ***** scripts boton menu click ***** -->
   <script type="application/x-javascript"> 
@@ -2539,10 +2442,11 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
-  <script src="assets/js/search-modal.js"></script>
+  
   
   
   
  
+  <script src="assets/js/chatbot.js"></script>
   </body>
 </html>

@@ -1,8 +1,26 @@
 // search-box open close js code
 let navbar = document.querySelector(".navbar");
 let searchBox = document.querySelector(".search-box .bx-search");
-// let searchBoxCancel = document.querySelector(".search-box .bx-x");
+let searchInput = document.querySelector(".search-box .input-box input");
 
+// Redirigir al hacer clic en el icono
+searchBox.addEventListener("click", ()=>{
+  window.location.href = "buscador.htm";
+});
+
+// Redirigir al presionar Enter en el input
+if (searchInput) {
+  searchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = `buscador.htm?q=${encodeURIComponent(query)}`;
+      }
+    }
+  });
+}
+
+/* 
 searchBox.addEventListener("click", ()=>{
   navbar.classList.toggle("showInput");
   if(navbar.classList.contains("showInput")){
@@ -11,6 +29,7 @@ searchBox.addEventListener("click", ()=>{
     searchBox.classList.replace("bx-x" ,"bx-search");
   }
 });
+*/
 
 // sidebar open close js code
 let navLinks = document.querySelector(".nav-links");
