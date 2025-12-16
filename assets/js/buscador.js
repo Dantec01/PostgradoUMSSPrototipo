@@ -5,7 +5,7 @@ const programasDB = [
     "nombre": "Ingeniería Biomédica",
     "tipo": "Diplomado",
     "area": "Salud",
-    "modalidad": "Virtual",
+    "modalidad": "Presencial",
     "duracion": "6 MESES",
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-biomedica-2v-07.jpg",
@@ -29,7 +29,7 @@ const programasDB = [
     "nombre": "Ciencia de Datos",
     "tipo": "Diplomado",
     "area": "Informática",
-    "modalidad": "VIRTUAL",
+    "modalidad": "Virtual",
     "duracion": "6 MESES",
     "precio": "Bs 5500",
     "imagen": "assets/images/programas/dip-cdatos-4v-03.jpg",
@@ -89,7 +89,7 @@ const programasDB = [
     "nombre": "Ingeniería de Soldadura",
     "tipo": "Diplomado",
     "area": "Ingeniería",
-    "modalidad": "Virtual",
+    "modalidad": "Semipresencial",
     "duracion": "6 MESES",
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-isoldadura-1v-07.jpg",
@@ -113,7 +113,7 @@ const programasDB = [
     "nombre": "Mecatrónica Educativa",
     "tipo": "Diplomado",
     "area": "Ingeniería",
-    "modalidad": "Virtual",
+    "modalidad": "Semipresencial",
     "duracion": "6 MESES",
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-mecatronicaedi-3v-05.jpg",
@@ -149,7 +149,7 @@ const programasDB = [
     "nombre": "Investigación Aplicada a la Educación Superior",
     "tipo": "Maestría",
     "area": "Educación",
-    "modalidad": "Virtual",
+    "modalidad": "Presencial",
     "duracion": "18 MESES",
     "precio": "BS 27000",
     "imagen": "assets/images/programas/maes-iaedusup-1v-05.jpg",
@@ -161,7 +161,7 @@ const programasDB = [
     "nombre": "Ingeniería de Manufactura",
     "tipo": "Maestría",
     "area": "Ingeniería",
-    "modalidad": "Virtual",
+    "modalidad": "Presencial",
     "duracion": "18 MESES",
     "precio": "BS 27000",
     "imagen": "assets/images/programas/maes-imanufactura-1v-09.jpg",
@@ -173,7 +173,7 @@ const programasDB = [
     "nombre": "Logística Empresarial y Gestión de Cadena de Suministros",
     "tipo": "Maestría",
     "area": "Negocios",
-    "modalidad": "Virtual",
+    "modalidad": "Presencial",
     "duracion": "18 MESES",
     "precio": "BS 27000",
     "imagen": "assets/images/programas/maes-logisticaegcs-1v-12.jpg",
@@ -185,7 +185,7 @@ const programasDB = [
     "nombre": "Sistemas Integrados de Gestión, Calidad, Medio Ambiente",
     "tipo": "Maestría",
     "area": "Informática",
-    "modalidad": "Virtual",
+    "modalidad": "Presencial",
     "duracion": "18 MESES",
     "precio": "BS 27000",
     "imagen": "assets/images/programas/maes-sigcma-v15-11.jpg",
@@ -197,7 +197,7 @@ const programasDB = [
     "nombre": "Sistemas Web e Inteligencia Artificial",
     "tipo": "Maestría",
     "area": "Informática",
-    "modalidad": "Virtual",
+    "modalidad": "Presencial",
     "duracion": "18 MESES",
     "precio": "BS 27000",
     "imagen": "assets/images/programas/maes-swia-1v-03.jpg",
@@ -266,7 +266,7 @@ function aplicarFiltros() {
   const modalidadesSeleccionadas = [];
   if (document.getElementById('filterPresencial').checked) modalidadesSeleccionadas.push('Presencial');
   if (document.getElementById('filterVirtual').checked) modalidadesSeleccionadas.push('Virtual');
-  if (document.getElementById('filterHibrido').checked) modalidadesSeleccionadas.push('Híbrido');
+  if (document.getElementById('filterHibrido').checked) modalidadesSeleccionadas.push('Semipresencial');
   
   if (modalidadesSeleccionadas.length > 0) {
     resultados = resultados.filter(p => modalidadesSeleccionadas.includes(p.modalidad));

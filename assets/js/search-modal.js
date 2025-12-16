@@ -60,7 +60,7 @@ const searchModalHTML = `
               <option value="todos">Todos</option>
               <option value="Presencial">Presencial</option>
               <option value="Virtual">Virtual</option>
-              <option value="Híbrido">Híbrido</option>
+              <option value="Semipresencial">Semipresencial</option>
             </select>
           </div>
           <div class="filter-group">
@@ -115,7 +115,7 @@ const searchModalHTML = `
             </div>
             <div class="filter-checkbox">
               <input type="checkbox" id="filterHibrido" onchange="aplicarFiltros()">
-              <label for="filterHibrido">Híbrido</label>
+              <label for="filterHibrido">Semipresencial</label>
             </div>
           </div>
           
@@ -231,7 +231,7 @@ function aplicarFiltros() {
   const modalidadesSeleccionadas = [];
   if (document.getElementById('filterPresencial').checked) modalidadesSeleccionadas.push('Presencial');
   if (document.getElementById('filterVirtual').checked) modalidadesSeleccionadas.push('Virtual');
-  if (document.getElementById('filterHibrido').checked) modalidadesSeleccionadas.push('Híbrido');
+  if (document.getElementById('filterHibrido').checked) modalidadesSeleccionadas.push('Semipresencial');
   
   if (modalidadesSeleccionadas.length > 0) {
     resultados = resultados.filter(p => modalidadesSeleccionadas.includes(p.modalidad));
