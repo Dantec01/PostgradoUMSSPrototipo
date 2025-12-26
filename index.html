@@ -73,17 +73,7 @@
           <li class=""><a href="diplomados.htm">Diplomados</a></li>
           <li class=""><a href="maestrias.htm">Maestrias</a></li>
           <li class=""><a href="doctorados.htm">Doctorados</a></li>
-          <li class="">
-            <a href="#">Información</a>
-            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
-            <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="avisos.htm">Avisos</a></li>
-              <li><a href="documentacion.htm">Documentación</a></li>
-              <li><a href="ddigital.htm">DDigital</a></li>
-              <li><a href="acercade.htm">Acerca de</a></li>
-            </ul>
-          </li>
-          <li class=""><a href="contactos.htm">Contactos</a></li>
+          <li class=""><a href="contactos.htm">Contacto</a></li>
         </ul>
       </div>
       <div class="search-box">
@@ -144,11 +134,15 @@
             <h2>Dirección de Posgrado </h2>
             <h3>Facultad de Ciencias y Tecnología</h3>
             <p>El Posgrado es parte fundamental de la formación continua de nuestros profesionales, brindándoles especialización, actualización y mayores oportunidades laborales. </p>
-            <div class="search-input">
-              <form id="search" onsubmit="event.preventDefault(); realizarBusquedaHome();">
-                <input type="text" placeholder="¿Como podemos ayudarle?" id='searchText' name="searchKeyword" />
-                <button type="submit">Buscar</button>
-              </form>
+            <h6 style="margin-top: 25px; margin-bottom: 15px; color: #fff; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Todos los enlaces</h6>
+            <div class="quick-access-buttons">
+              <a href="diplomados.htm">Diplomados</a>
+              <a href="maestrias.htm">Maestrías</a>
+              <a href="doctorados.htm">Doctorados</a>
+              <a href="documentacion.htm">Documentación</a>
+              <a href="avisos.htm">Avisos</a>
+              <a href="contactos.htm">Contacto</a>
+              <a href="preguntas_frecuentes.htm">Preguntas Frecuentes</a>
             </div>
           </div>
         </div>
@@ -202,23 +196,14 @@ Diciembre 2025              <p>
 <!-- ***** fin de botones de programas ***** --> 
   
 
-<!-- ***** separador  inicio ***** -->
-<div class="single-product section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="sep"></div>
-        </div>
-      </div>
-    </div>
-  </div>
- <!--***** separador fin ***** -->
   <!-- ***** Inicio del Carrousel ***** -->
   <section id="tranding">
     
     <div class="container2">  
+      <div class="text-center">
+        <h1 class="section-heading oferta-heading">Oferta Académica</h1>
+      </div>
       <div class="swiper tranding-slider">
-      <h1 class="text-center section-heading">Oferta Académica</h1>
         <div class="swiper-wrapper">   
 
 
@@ -506,33 +491,23 @@ Diciembre 2025              <p>
     </div>
 </div>-->
 <!-- ***** fin Inicio Aviso 71 puntos ***** -->
-  <!-- ***** Inicio Aviso 71 puntos ***** -->
+  <!-- ***** Inicio Avisos ***** -->
   <div class="features" style="margin-top:20px;">
     <div class="container">
       <div class="row">
         
-        <div class="col-lg-12 col-md-12">
+        <div class="col-lg-6 col-md-6">
             <div class="item">              
               <div>
-               <img style="width:50%" src="assets/images/avisos/pg-fcyt-aviso-71puntos.png" alt="comunicado-notas-pg" >
+               <img class="clickable-image" style="width:100%" src="assets/images/avisos/pg-fcyt-aviso-71puntos.png" alt="comunicado-notas-pg" onclick="openImageModal(this)">
               </div>  
             </div>
         </div>
-       
 
-      </div>
-    </div>
-</div>
-<!-- ***** fin Inicio Aviso 71 puntos ***** -->
-  <!-- ***** Inicio AVISOS de programas ***** -->
-  <div class="features" style="margin-top:20px;">
-    <div class="container">
-      <div class="row">
-        
-        <div class="col-lg-12 col-md-12">
+        <div class="col-lg-6 col-md-6">
             <div class="item">              
               <div>
-               <img style="width:50%" src="assets/images/avisos/comunicado-qr-03.png" alt="comunicado-qr" >
+               <img class="clickable-image" style="width:100%" src="assets/images/avisos/comunicado-qr-03.png" alt="comunicado-qr" onclick="openImageModal(this)">
               </div>
               <p> 
                 <a href="avisos.htm"> <font size=4 color="#fd0000" > Más Información... </font></a>
@@ -545,7 +520,7 @@ Diciembre 2025              <p>
       </div>
     </div>
 </div>
-<!-- ***** fin de AVISOS de programas ***** -->  
+<!-- ***** fin de Avisos ***** -->  
 
   <!-- ***** Inicio botones de programas ***** -->
   <br><br><br><br>
@@ -884,17 +859,21 @@ Diciembre 2025              <p>
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <br><br>
-        <p>Copyright © 2024 Dirección de Posgrado Facultad de Ciencias y Tecnología. Todos los derechos Reservados. &nbsp;&nbsp; <a rel="nofollow" href="index.html" target="_blank"></a></p>
+        
+                <div class="footer-links">
+          <a href="avisos.htm">Avisos</a>
+          <a href="documentacion.htm">Documentación</a>
+          <a href="ddigital.htm">DDigital</a>
+          <a href="acercade.htm">Acerca de</a>
+          <a href="preguntas_frecuentes.htm">Preguntas Frecuentes</a>
+        </div>
+        <p class="footer-copyright">Copyright © 2024 Dirección de Posgrado Facultad de Ciencias y Tecnología. Todos los derechos Reservados. &nbsp;&nbsp; <a rel="nofollow" href="index.html" target="_blank"></a></p>
       </div>
     </div>
   </footer>
   <style>
   .fa-brands{
     margin-top: 10px;
-  }
-  .navbar .active{
-    background-color:red;
   }
   </style>
   <!-- ***** footer  fin ***** -->
@@ -949,5 +928,12 @@ Diciembre 2025              <p>
       }
     }
   </script>
+
+  <!-- Image Modal -->
+  <div id="myImageModal" class="image-modal">
+    <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+    <img class="image-modal-content" id="img01">
+  </div>
+
   </body>
 </html>

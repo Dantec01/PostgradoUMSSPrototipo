@@ -206,46 +206,9 @@ const programasDB = [
   }
 ];
 
-// Realizar búsqueda
+// Realizar búsqueda (Alias para compatibilidad o uso futuro)
 function realizarBusqueda() {
-  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-  const grado = document.getElementById('gradoSelect').value;
-  const modalidad = document.getElementById('modalidadSelect').value;
-  const area = document.getElementById('areaSelect').value;
-  
-  // Si no hay término de búsqueda y todos los filtros están en "Seleccionar" (vacío), no mostrar nada
-  if (!searchTerm && grado === "" && modalidad === "" && area === "") {
-    document.getElementById('searchResults').innerHTML = '';
-    return;
-  }
-
-  let resultados = programasDB;
-  
-  // Filtrar por término de búsqueda
-  if (searchTerm) {
-    resultados = resultados.filter(p => 
-      p.nombre.toLowerCase().includes(searchTerm) ||
-      p.tipo.toLowerCase().includes(searchTerm) ||
-      p.area.toLowerCase().includes(searchTerm)
-    );
-  }
-  
-  // Filtrar por grado
-  if (grado && grado !== 'todos') {
-    resultados = resultados.filter(p => p.tipo === grado);
-  }
-  
-  // Filtrar por modalidad
-  if (modalidad && modalidad !== 'todos') {
-    resultados = resultados.filter(p => p.modalidad === modalidad);
-  }
-  
-  // Filtrar por área
-  if (area && area !== 'todos') {
-    resultados = resultados.filter(p => p.area === area);
-  }
-  
-  mostrarResultados(resultados);
+  aplicarFiltros();
 }
 
 // Aplicar filtros del sidebar
@@ -274,16 +237,16 @@ function aplicarFiltros() {
   
   // Filtrar por área
   const areasSeleccionadas = [];
-  if (document.getElementById('filterTecnologia').checked) areasSeleccionadas.push('Sistemas', 'Informática');
-  if (document.getElementById('filterNegocios').checked) areasSeleccionadas.push('Ingeniería', 'Logística');
-  if (document.getElementById('filterSalud').checked) areasSeleccionadas.push('Electrónica', 'Química');
+  if (document.getElementById('filterTecnologia').checked) areasSeleccionadas.push('Informática', 'Sistemas', 'Ingeniería');
+  if (document.getElementById('filterNegocios').checked) areasSeleccionadas.push('Negocios', 'Logística');
+  if (document.getElementById('filterSalud').checked) areasSeleccionadas.push('Salud', 'Medicina', 'Química');
   if (document.getElementById('filterEducacion').checked) areasSeleccionadas.push('Educación');
   
   if (areasSeleccionadas.length > 0) {
     resultados = resultados.filter(p => areasSeleccionadas.some(area => p.area.includes(area)));
   }
   
-  // Aplicar también los filtros de los selectores superiores
+  // Aplicar también el filtro de búsqueda por texto
   const searchTerm = document.getElementById('searchInput').value.toLowerCase();
   if (searchTerm) {
     resultados = resultados.filter(p => 
@@ -343,6 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (query) {
     document.getElementById('searchInput').value = query;
+    toggleClearBtn();
     realizarBusqueda();
   }
   
@@ -357,11 +321,36 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Búsqueda en tiempo real
     searchInput.addEventListener('input', function() {
+      toggleClearBtn();
       realizarBusqueda();
     });
   }
 });
 
+function toggleClearBtn() {
+  const searchInput = document.getElementById('searchInput');
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (searchInput && clearBtn) {
+    if (searchInput.value.trim() !== "") {
+      clearBtn.style.display = "block";
+    } else {
+      clearBtn.style.display = "none";
+    }
+  }
+}
+
+function clearSearch() {
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.value = "";
+    toggleClearBtn();
+    searchInput.focus();
+    aplicarFiltros(); // Actualizar resultados
+  }
+}
+
 // Expose functions to window
 window.realizarBusqueda = realizarBusqueda;
 window.aplicarFiltros = aplicarFiltros;
+window.toggleClearBtn = toggleClearBtn;
+window.clearSearch = clearSearch;

@@ -44,7 +44,7 @@
 <style>
   /* Estilos específicos para la página de búsqueda */
   .search-page-container {
-    padding-top: 120px;
+    padding-top: 100px;
     padding-bottom: 60px;
     min-height: 80vh;
   }
@@ -73,19 +73,40 @@
     display: flex;
     gap: 10px;
   }
-  
-  .search-input-wrapper input {
+
+  .search-field-container {
+    position: relative;
     flex: 1;
-    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-field-container input {
+    width: 100%;
+    padding: 15px 45px 15px 25px;
     border: 2px solid #eee;
-    border-radius: 10px;
+    border-radius: 30px;
     font-size: 16px;
     transition: all 0.3s;
   }
   
-  .search-input-wrapper input:focus {
+  .search-field-container input:focus {
     border-color: #dc3545;
     outline: none;
+  }
+
+  .clear-search-btn {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    color: #999;
+    display: none;
+    font-size: 24px;
+    transition: color 0.3s;
+  }
+
+  .clear-search-btn:hover {
+    color: #dc3545;
   }
   
   .btn-search-modal {
@@ -93,7 +114,7 @@
     background: #dc3545;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 30px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
@@ -138,9 +159,10 @@
   }
   
   .search-sidebar {
+    display: block;
     width: 280px;
     flex-shrink: 0;
-    background: white;
+    background: #f4f4f4;
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
@@ -331,17 +353,7 @@
           <li class=""><a href="diplomados.htm">Diplomados</a></li>
           <li class=""><a href="maestrias.htm">Maestrias</a></li>
           <li class=""><a href="doctorados.htm">Doctorados</a></li>
-          <li class="">
-            <a href="#">Información</a>
-            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
-            <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="avisos.htm">Avisos</a></li>
-              <li><a href="documentacion.htm">Documentación</a></li>
-              <li><a href="ddigital.htm">DDigital</a></li>
-              <li><a href="acercade.htm">Acerca de</a></li>
-            </ul>
-          </li>
-          <li class=""><a href="contactos.htm">Contactos</a></li>
+          <li class=""><a href="contactos.htm">Contacto</a></li>
         </ul>
       </div>
       <div class="search-box">
@@ -356,46 +368,19 @@
 
   <div class="search-page-container">
     <div class="container">
-      <div class="search-filters-top">
-        <h3>BUSQUEDA DE PROGRAMAS</h3>
+      
+      <div class="search-filters-top" style="position: relative;">
+        <a href="javascript:history.back()" class="btn btn-danger" style="position: absolute; left: 20px; top: 20px;">
+             <i class="fa fa-arrow-left"></i> Volver
+        </a>
+<h3>BUSQUEDA DE PROGRAMAS</h3>
         <div class="search-input-group">
           <div class="search-input-wrapper">
-            <input type="text" id="searchInput" placeholder="Buscar......" />
-            <button class="btn-search-modal" onclick="realizarBusqueda()">BUSCAR</button>
-          </div>
-        </div>
-        
-        <div class="filter-selects">
-          <div class="filter-group">
-            <label>Grado</label>
-            <select id="gradoSelect" onchange="realizarBusqueda()">
-              <option value="" selected>Seleccionar</option>
-              <option value="todos">Todos</option>
-              <option value="Diplomado">Diplomado</option>
-              <option value="Maestría">Maestría</option>
-              <option value="Doctorado">Doctorado</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Modalidad</label>
-            <select id="modalidadSelect" onchange="realizarBusqueda()">
-              <option value="" selected>Seleccionar</option>
-              <option value="todos">Todos</option>
-              <option value="Presencial">Presencial</option>
-              <option value="Virtual">Virtual</option>
-              <option value="Semipresencial">Semipresencial</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Área</label>
-            <select id="areaSelect" onchange="realizarBusqueda()">
-              <option value="" selected>Seleccionar</option>
-              <option value="todos">Todos</option>
-              <option value="Informática">Tecnología y Sistemas</option>
-              <option value="Ingeniería">Ingeniería</option>
-              <option value="Educación">Educación</option>
-              <option value="Química">Ciencias</option>
-            </select>
+            <div class="search-field-container">
+              <input type="text" id="searchInput" placeholder="Buscar......" onkeyup="if(event.key === 'Enter') aplicarFiltros(); toggleClearBtn()" oninput="toggleClearBtn()" />
+              <i class='bx bx-x clear-search-btn' id="clearSearchBtn" onclick="clearSearch()"></i>
+            </div>
+            <button class="btn-search-modal" onclick="aplicarFiltros()">BUSCAR</button>
           </div>
         </div>
       </div>
@@ -472,17 +457,21 @@
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <br><br>
-        <p>Copyright © 2024 Dirección de Posgrado Facultad de Ciencias y Tecnología. Todos los derechos Reservados. &nbsp;&nbsp; <a rel="nofollow" href="index.html" target="_blank"></a></p>
+        
+                <div class="footer-links">
+          <a href="avisos.htm">Avisos</a>
+          <a href="documentacion.htm">Documentación</a>
+          <a href="ddigital.htm">DDigital</a>
+          <a href="acercade.htm">Acerca de</a>
+          <a href="preguntas_frecuentes.htm">Preguntas Frecuentes</a>
+        </div>
+        <p class="footer-copyright">Copyright © 2024 Dirección de Posgrado Facultad de Ciencias y Tecnología. Todos los derechos Reservados. &nbsp;&nbsp; <a rel="nofollow" href="index.html" target="_blank"></a></p>
       </div>
     </div>
   </footer>
   <style>
   .fa-brands{
     margin-top: 10px;
-  }
-  .navbar .active{
-    background-color:red;
   }
   </style>
   <!-- ***** footer  fin ***** -->
@@ -509,5 +498,6 @@
   <script src="assets/js/buscador.js"></script>
   
   <script src="assets/js/chatbot.js"></script>
-  </body>
+
+</body>
 </html>

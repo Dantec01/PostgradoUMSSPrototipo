@@ -80,8 +80,9 @@
 
 #tranding .tranding-slider {
   height: 52rem;
-  padding:  0;
+  padding: 0; /* Removed padding */
   position: relative;
+  margin-top: -80px; /* Adjusted to pull up closer to text without moving text */
 }
 
 
@@ -91,11 +92,12 @@
   }
 }
 
-#tranding .tranding-slider {
+/* Removed duplicate rule that was adding padding back */
+/* #tranding .tranding-slider {
   height: 52rem;
   padding: 2rem 0;
   position: relative;
-}
+} */
 
 @media (max-width:500px) {
   #tranding .tranding-slider {

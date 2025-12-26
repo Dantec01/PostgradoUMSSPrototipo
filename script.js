@@ -4,6 +4,10 @@ var TrandingSlider = new Swiper('.tranding-slider', {
   centeredSlides: true,
   loop: true,
   slidesPerView: 'auto',
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
