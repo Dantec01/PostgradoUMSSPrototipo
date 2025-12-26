@@ -793,26 +793,38 @@
    
    <script>
   var images = [
-    
-    '../assets/images/bg/b2.jpg',
-    '../assets/images/bg/b3.jpg',
-    '../assets/images/bg/b4.jpg',
-    '../assets/images/bg/b5.jpg',
-    '../assets/images/bg/b6.jpg',
-    '../assets/images/bg/b7.jpg',
-    '../assets/images/bg/b8.jpg',
-    '../assets/images/bg/b9.jpg',
-    '../assets/images/bg/b10.jpg',
-    '../assets/images/bg/b11.jpg',
-    '../assets/images/banner-bg.jpg',
-    
+    'assets/images/bg/b2.jpg',
+    'assets/images/bg/b3.jpg',
+    'assets/images/bg/b4.jpg',
+    'assets/images/bg/b5.jpg',
+    'assets/images/bg/b6.jpg',
+    'assets/images/bg/b7.jpg',
+    'assets/images/bg/b8.jpg',
+    'assets/images/bg/b9.jpg',
+    'assets/images/bg/b10.jpg',
+    'assets/images/bg/b11.jpg',
+    'assets/images/banner-bg.jpg'
+  ];
 
-  ]
+  // Preload images to prevent white flash
+  images.forEach(function(src) {
+    var img = new Image();
+    img.src = src;
+  });
+
+  var currentIndex = 0;
+
   setInterval(function() {
-    const image = images.shift()
-    document.querySelector('.main-banner').style.backgroundImage = `url(${image})`
-    images.push(image)
-  }, 3000);
+    var image = images[currentIndex];
+    // Ensure image is loaded before switching (double check)
+    var imgLoader = new Image();
+    imgLoader.onload = function() {
+      document.querySelector('.main-banner').style.backgroundImage = `url(${image})`;
+    };
+    imgLoader.src = image;
+    
+    currentIndex = (currentIndex + 1) % images.length;
+  }, 5000);
 </script>
    
    
