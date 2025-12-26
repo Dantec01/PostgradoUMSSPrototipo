@@ -127,9 +127,34 @@
   .contact-page a{
     font-size:14px;
   }
-H4{
-color:#fff !important;
-}
+  H4{
+  color:#fff !important;
+  }
+  .video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 767px) {
+    .page-heading .btn-danger {
+      position: static !important;
+      display: block;
+      margin-bottom: 15px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 </style>
 <div class="page-heading header-text">
     <div class="container">
@@ -156,11 +181,9 @@ color:#fff !important;
                   <p>Estimados estudiantes del Posgrado de la Facultad de Ciencias y Tecnología, informarles que, a partir del 08 de julio de 2024, se pondrá en vigencia el nuevo sistema de cobro mediante código QR, este nuevo método de pago es parte de nuestro esfuerzo continuo por mejorar y brindarles un servicio más eficiente al momento de cancelar el módulo correspondiente.
                 <br>  El nuevo procedimiento de pago es través de código QR generado por el propio estudiante por el Sistema OMEGA debe utilizar su usuario y PIN posterior a eso seguir las instrucciones explicadas en el video adjunto.
                 </p>
-                <p style="text-align: center;">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/e5NrgI2d-vU" title="Pago por QR de programas de Posgrado-UMSS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                  &nbsp; 
-
-                </p>
+                <div class="video-responsive">
+                <iframe src="https://www.youtube.com/embed/e5NrgI2d-vU" title="Pago por QR de programas de Posgrado-UMSS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
                 <p>En caso de que elijan el pago mediante QR, deben tener en cuenta que el código generado por QR tiene una duración de 10 minutos. Si este tiempo expira, será necesario que generen un nuevo código QR.
                    Por otro lado, si optan por el pago efectivo, deben programarlo en el sistema Omega y efectuar el pago en caja el mismo día que lo programaron, la atención en caja es de 8:00 a 12:00 y de 14:00 a 17:30.
                 <br><em>Recordarles que los pagos se realizan antes de iniciar el módulo correspondiente de acuerdo a reglamento vigente, siendo el 

@@ -10,7 +10,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-biomedica-2v-07.jpg",
     "url": "dip-biomedica-2v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-ccialimentos-10v",
@@ -22,7 +23,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-ccialimentos-10v-03.jpg",
     "url": "dip-ccialimentos-10v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-cdatos-4v",
@@ -34,7 +36,8 @@ const programasDB = [
     "precio": "Bs 5500",
     "imagen": "assets/images/programas/dip-cdatos-4v-03.jpg",
     "url": "dip-cdatos-4v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-ciberseguridad-1v",
@@ -46,7 +49,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-ciberseguridad-1v-03.jpg",
     "url": "dip-ciberseguridad-1v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-edusup-19v",
@@ -58,7 +62,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-edusup-19v-01.jpg",
     "url": "dip-edusup-19v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-estadistica-4v",
@@ -70,7 +75,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-estadistica-4v-08.jpg",
     "url": "dip-estadistica-4v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-iergonomia-7v",
@@ -82,7 +88,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-iergonomia-7v-07.jpg",
     "url": "dip-iergonomia-7v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-isoldadura-1v",
@@ -94,7 +101,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-isoldadura-1v-07.jpg",
     "url": "dip-isoldadura-1v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-lutribologia-1v",
@@ -106,7 +114,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-lutribologia-1v-11.jpg",
     "url": "dip-lutribologia-1v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-mecatronicaedi-3v",
@@ -118,7 +127,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-mecatronicaedi-3v-05.jpg",
     "url": "dip-mecatronicaedi-3v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-tbiocombustible-1v",
@@ -130,7 +140,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-tbiocombustible-1v-19.jpg",
     "url": "dip-tbiocombustible-1v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "dip-trabaltoriesgo-3v",
@@ -142,7 +153,8 @@ const programasDB = [
     "precio": "BS 5600",
     "imagen": "assets/images/programas/dip-trabaltoriesgo-3v-06.jpg",
     "url": "dip-trabaltoriesgo-3v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, Diplomado de doble titulacion, 26 ENERO, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "maes-iaedusup-1v",
@@ -154,7 +166,8 @@ const programasDB = [
     "precio": "BS 27000",
     "imagen": "assets/images/programas/maes-iaedusup-1v-05.jpg",
     "url": "maes-iaedusup-1v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "maes-imanufactura-1v",
@@ -166,7 +179,8 @@ const programasDB = [
     "precio": "BS 27000",
     "imagen": "assets/images/programas/maes-imanufactura-1v-09.jpg",
     "url": "maes-imanufactura-1v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "maes-logisticaegcs-1v",
@@ -178,7 +192,8 @@ const programasDB = [
     "precio": "BS 27000",
     "imagen": "assets/images/programas/maes-logisticaegcs-1v-12.jpg",
     "url": "maes-logisticaegcs-1v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "maes-sigcma-v15",
@@ -190,7 +205,8 @@ const programasDB = [
     "precio": "BS 27000",
     "imagen": "assets/images/programas/maes-sigcma-v15-11.jpg",
     "url": "maes-sigcma-v15.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, INSCRIPCIONES ABIERTAS"
   },
   {
     "id": "maes-swia-1v",
@@ -202,7 +218,8 @@ const programasDB = [
     "precio": "BS 27000",
     "imagen": "assets/images/programas/maes-swia-1v-03.jpg",
     "url": "maes-swia-1v.htm",
-    "estado": "Ofertado"
+    "estado": "Ofertado",
+    "keywords": "Profesionales, INSCRIPCIONES ABIERTAS"
   }
 ];
 
@@ -248,11 +265,20 @@ function aplicarFiltros() {
   
   // Aplicar también el filtro de búsqueda por texto
   const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  
+  const filtersActive = tiposSeleccionados.length > 0 || modalidadesSeleccionadas.length > 0 || areasSeleccionadas.length > 0;
+
+  if (!searchTerm && !filtersActive) {
+    mostrarResultados([]);
+    return;
+  }
+
   if (searchTerm) {
     resultados = resultados.filter(p => 
       p.nombre.toLowerCase().includes(searchTerm) ||
       p.tipo.toLowerCase().includes(searchTerm) ||
-      p.area.toLowerCase().includes(searchTerm)
+      p.area.toLowerCase().includes(searchTerm) ||
+      (p.keywords && p.keywords.toLowerCase().includes(searchTerm))
     );
   }
   

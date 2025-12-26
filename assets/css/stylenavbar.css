@@ -357,3 +357,31 @@ nav .navbar .links li .sub-menu li{
   max-width: 100%;
 } 
 }
+
+@media (max-width: 767px) {
+  nav {
+    height: auto;
+    min-height: 90px;
+    padding-bottom: 10px;
+  }
+  
+  nav .navbar {
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+
+  .navbar .bx-menu {
+    margin-right: 15px;
+  }
+
+  .navbar .logo img {
+    width: 180px !important;
+  }
+
+  .navbar .search-box {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}
