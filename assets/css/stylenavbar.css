@@ -287,6 +287,7 @@ nav .navbar .links li:hover .js-sub-menu{
     .navbar .bx-menu{
       font-size: 25px;
       color: #fff;
+		  margin-right: 12px;
     }
   nav .navbar .links{
     display: block;
@@ -303,6 +304,24 @@ nav .navbar .links li .sub-menu{
   top: 0;
   box-shadow: none;
   display: none;
+}
+
+/* En tablet/desktop compacto (hamburguesa visible), centrar el logo en la barra.
+   No aplica a móvil (<=767px) porque ya tiene su propio layout. */
+@media (max-width: 1230px) and (min-width: 768px) {
+  nav .navbar {
+    position: relative;
+  }
+
+  .navbar .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    width: auto;
+  }
 }
 nav .navbar .links li .sub-menu li{
   border-bottom: none;
@@ -370,8 +389,23 @@ nav .navbar .links li .sub-menu li{
     padding: 10px 20px;
   }
 
+  /* Fila superior: hamburguesa a la izquierda, logo centrado.
+     Se agrega un espaciador a la derecha para que el centrado sea real. */
   .navbar .bx-menu {
-    margin-right: 15px;
+    flex: 0 0 40px;
+    margin-right: 0;
+  }
+
+  .navbar .logo {
+    margin-right: 0;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav .navbar::after {
+    content: "";
+    flex: 0 0 40px;
   }
 
   .navbar .logo img {
